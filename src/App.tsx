@@ -6,6 +6,9 @@ import { TaskData } from './data';
 import './App.css';
 import BlankPage from './Page/BlankPage';
 import TaskPage from './Page/TaskPage';
+import { useEffect } from 'react';
+import { fetchTaskData } from './store/task-action';
+import { useAppDispatch } from './store/hooks';
 
 function App() {
     // Api Mock
@@ -13,6 +16,12 @@ function App() {
     mock.onGet('/api/tasks').reply(200, {
         TaskData,
     });
+
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchTaskData());
+    }, [dispatch]);
 
     return (
         <Router>

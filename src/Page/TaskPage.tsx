@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { TaskProps } from '../interface';
 import { NavLink } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -14,33 +12,17 @@ import Paper from '@mui/material/Paper';
 import Task from '../components/Task';
 import Sidebar from '../components/Sidebar';
 import styles from './TaskPage.module.css';
-import { style } from '@mui/system';
+import { useAppSelector } from '../store/hooks';
 
 const mdTheme = createTheme();
 
 function TaskPage() {
     const [open, setOpen] = React.useState(true);
-    const [tasks, setTasks] = useState<TaskProps[]>([]);
-    const [completedTasks, setCompletedTasks] = useState<TaskProps[]>([]);
-    const [canceledTasks, setCanceledTasks] = useState<TaskProps[]>([]);
-    const [error, setError] = useState(false);
 
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const response = await axios('/api/tasks');
-                if (response.status !== 200) {
-                    throw new Error(`This is an HTTP error: The status is ${response.status}`);
-                }
-                setTasks(response.data.TaskData.Tasks);
-                setCompletedTasks(response.data.TaskData.CompletedTasks);
-                setCanceledTasks(response.data.TaskData.CanceledTasks);
-            } catch (error: any) {
-                setError(true);
-            }
-        };
-        getData();
-    }, []);
+    const tasks: TaskProps[] = useAppSelector((state) => state.task.tasks);
+    const completedTasks: TaskProps[] = useAppSelector((state) => state.task.completedTasks);
+    const canceledTasks: TaskProps[] = useAppSelector((state) => state.task.canceledTasks);
+    const error = useAppSelector((state) => state.task.error);
 
     const toggleDrawer = () => {
         setOpen(!open);
