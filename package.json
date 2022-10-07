@@ -14,6 +14,8 @@
     "@types/node": "^16.11.63",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "axios": "^1.0.0",
+    "axios-mock-adapter": "^1.21.2",
     "eslint": "^8.24.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
