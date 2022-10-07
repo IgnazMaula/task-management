@@ -7,8 +7,9 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems, secondaryListItems } from '../components/listItems';
+import { mainListItems, secondaryListItems } from './ListItems';
 import { SideBarProps } from '../interface';
+import styles from './Sidebar.module.css';
 
 const drawerWidth: number = 240;
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
@@ -38,14 +39,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const Sidebar = ({ open, setOpen, toggleDrawer }: SideBarProps) => {
     return (
         <Drawer variant='permanent' open={open}>
-            <Toolbar
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'flex-end',
-                    px: [1],
-                }}
-            >
+            <Toolbar className={styles.toolbar}>
                 <IconButton onClick={toggleDrawer}>
                     <ChevronLeftIcon />
                 </IconButton>
@@ -53,7 +47,7 @@ const Sidebar = ({ open, setOpen, toggleDrawer }: SideBarProps) => {
             <Divider />
             <List component='nav'>
                 {mainListItems}
-                <Divider sx={{ my: 1 }} />
+                <Divider className={styles.divider} />
                 {secondaryListItems}
             </List>
         </Drawer>

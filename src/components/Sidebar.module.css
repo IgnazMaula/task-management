@@ -1,0 +1,12 @@
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.divider {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
