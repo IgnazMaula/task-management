@@ -5,8 +5,8 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
-import { TaskProps } from '../interface';
-import { statuses } from '../const';
+import { TaskProps } from '../../../interface';
+import { statuses } from '../../../const';
 import styles from './Task.module.css';
 
 export default function Task({ title, closeDate, name, status }: TaskProps) {
