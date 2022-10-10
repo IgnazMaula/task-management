@@ -7,7 +7,7 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems, secondaryListItems } from './ListItems';
+import { mainListItems, secondaryListItems } from './ItemList';
 import { SideBarProps } from '../interface';
 import styles from './Sidebar.module.css';
 
