@@ -7,20 +7,21 @@ import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
 import { TaskProps } from '../interface';
 import { statuses } from '../const';
+import styles from './Task.module.css';
 
 export default function Task({ title, closeDate, name, status }: TaskProps) {
     return (
         <React.Fragment>
-            <Card variant='outlined' sx={{ marginBottom: 1, boxShadow: '3px 3px 2px #EBEBEB' }}>
-                <CardContent sx={{ paddingBottom: 2, paddingY: 1 }}>
-                    <Typography sx={{ fontWeight: 'bold', marginBottom: 1 }}>{title}</Typography>
+            <Card variant='outlined' className={styles.card}>
+                <CardContent className={styles.cardContent}>
+                    <Typography className={styles.cardTitle}>{title}</Typography>
                     <Typography color={'#bababa'} fontSize={14}>
                         Close date: {closeDate}
                     </Typography>
                 </CardContent>
                 <CardHeader
-                    sx={{ paddingY: 2 }}
-                    avatar={<Avatar sx={{ width: 30, height: 30, backgroundColor: '#2196f3' }} alt={name} src='/static/images/avatar/1.jpg' />}
+                    className={styles.cardHeader}
+                    avatar={<Avatar className={styles.avatar} alt={name} />}
                     title={name}
                     action={
                         <Chip

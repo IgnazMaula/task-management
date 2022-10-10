@@ -6,8 +6,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-
 import Sidebar from '../components/Sidebar';
+import styles from './BlankPage.module.css';
 
 const mdTheme = createTheme();
 
@@ -19,19 +19,17 @@ function BlankPage() {
 
     return (
         <ThemeProvider theme={mdTheme}>
-            <Box sx={{ display: 'flex' }}>
+            <Box className={styles.box}>
                 <CssBaseline />
                 <Sidebar open={open} setOpen={setOpen} toggleDrawer={toggleDrawer} />
                 <Box
                     component='main'
+                    className={styles.mainContent}
                     sx={{
                         backgroundColor: (theme) => (theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900]),
-                        flexGrow: 1,
-                        height: '100vh',
-                        overflow: 'auto',
                     }}
                 >
-                    <Container maxWidth='lg' sx={{ mt: 4, mb: 4 }}>
+                    <Container maxWidth='lg' className={styles.mainContainer}>
                         <Grid container spacing={3}>
                             <Typography variant='h3'>Blank Page</Typography>
                         </Grid>
