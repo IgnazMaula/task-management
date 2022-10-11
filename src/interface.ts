@@ -18,4 +18,5 @@ export interface ProjectProps {
     description: string;
     dayLeft: number;
     progress: number;
+    status?: string;
 }

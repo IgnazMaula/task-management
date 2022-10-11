@@ -12,3 +12,43 @@ export const TaskData = {
     ],
     CanceledTasks: [{ title: 'BBC', closeDate: 'April 2, 2022', name: 'Nikol Ricci', status: 'Canceled' }],
 };
+
+export const ProjectData = {
+    Projects: [
+        {
+            title: 'Weather app',
+            description: 'Cu mei agam inciderint mediocritatem, no melius efficiantur usu.',
+            dayLeft: 1,
+            progress: 91,
+            status: 'Current',
+        },
+        {
+            title: 'Logo Design',
+            description: 'Eum et nibh pericula. Dolorum posidonium has at, est ei dico deserunt.',
+            dayLeft: 4,
+            progress: 82,
+            status: 'Current',
+        },
+        {
+            title: 'Marketing Assets',
+            description: 'CEu vide percipit temporibus vis. Ei eos quis animal persequeris. Ut laoreet disputando duo.',
+            dayLeft: 12,
+            progress: 58,
+            status: 'Current',
+        },
+        {
+            title: 'Mail Design',
+            description: 'Vis et esse docendi, mea tollit conceptam sadipscing ea. At illud diceret accommodare.',
+            dayLeft: 18,
+            progress: 24,
+            status: 'Current',
+        },
+        {
+            title: 'Website Analytics',
+            description: 'Ad nibh case sed, est cu vide primis, est at zril nemore. Vis alterum aliquam ad.',
+            dayLeft: 14,
+            progress: 18,
+            status: 'Current',
+        },
+    ],
+};

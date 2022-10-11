@@ -1,5 +1,5 @@
 import React from 'react';
-import { TaskProps } from '../../../interface';
+import { ProjectProps, TaskProps } from '../../../interface';
 import { NavLink } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
@@ -52,10 +52,10 @@ function ProjectPage() {
     const [open, setOpen] = React.useState(true);
     const [value, setValue] = React.useState(0);
 
-    const tasks: TaskProps[] = useAppSelector((state) => state.task.tasks);
-    const completedTasks: TaskProps[] = useAppSelector((state) => state.task.completedTasks);
-    const canceledTasks: TaskProps[] = useAppSelector((state) => state.task.canceledTasks);
-    const error = useAppSelector((state) => state.task.error);
+    const projects: ProjectProps[] = useAppSelector((state) => state.project.projects);
+    const error = useAppSelector((state) => state.project.error);
+
+    console.log(projects);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -105,51 +105,17 @@ function ProjectPage() {
                                         <SearchBar />
                                         <TabPanel value={value} index={0}>
                                             <Grid container spacing={3}>
-                                                <Grid item xs={12} md={4} lg={4}>
-                                                    <Project
-                                                        key='aa'
-                                                        title='Weather app'
-                                                        description='Cu mei agam inciderint mediocritatem, no melius efficiantur usu.'
-                                                        dayLeft={4}
-                                                        progress={50}
-                                                    />
-                                                </Grid>
-                                                <Grid item xs={12} md={4} lg={4}>
-                                                    <Project
-                                                        key='aa'
-                                                        title='Lada'
-                                                        description='Cu mei agam inciderint mediocritatem, no melius efficiantur usu.'
-                                                        dayLeft={2}
-                                                        progress={20}
-                                                    />
-                                                </Grid>
-                                                <Grid item xs={12} md={4} lg={4}>
-                                                    <Project
-                                                        key='aa'
-                                                        title='Lada'
-                                                        description='Cu mei agam inciderint mediocritatem, no melius efficiantur usu.'
-                                                        dayLeft={2}
-                                                        progress={70}
-                                                    />
-                                                </Grid>
-                                                <Grid item xs={12} md={4} lg={4}>
-                                                    <Project
-                                                        key='aa'
-                                                        title='Lada'
-                                                        description='Cu mei agam inciderint mediocritatem, no melius efficiantur usu.'
-                                                        dayLeft={4}
-                                                        progress={50}
-                                                    />
-                                                </Grid>
-                                                <Grid item xs={12} md={4} lg={4}>
-                                                    <Project
-                                                        key='aa'
-                                                        title='Lada'
-                                                        description='Cu mei agam inciderint mediocritatem, no melius efficiantur usu.'
-                                                        dayLeft={4}
-                                                        progress={50}
-                                                    />
-                                                </Grid>
+                                                {projects.map((p) => (
+                                                    <Grid item xs={12} md={4} lg={4}>
+                                                        <Project
+                                                            key={p.title}
+                                                            title={p.title}
+                                                            description={p.description}
+                                                            dayLeft={p.dayLeft}
+                                                            progress={p.progress}
+                                                        />
+                                                    </Grid>
+                                                ))}
                                                 <Grid item xs={12} md={4} lg={4}>
                                                     <NewProject />
                                                 </Grid>
@@ -157,6 +123,19 @@ function ProjectPage() {
                                         </TabPanel>
                                         <TabPanel value={value} index={1}>
                                             <Grid container spacing={3}>
+                                                {projects
+                                                    .filter((p) => p.status === 'Current')
+                                                    .map((p) => (
+                                                        <Grid item xs={12} md={4} lg={4}>
+                                                            <Project
+                                                                key={p.title}
+                                                                title={p.title}
+                                                                description={p.description}
+                                                                dayLeft={p.dayLeft}
+                                                                progress={p.progress}
+                                                            />
+                                                        </Grid>
+                                                    ))}
                                                 <Grid item xs={12} md={4} lg={4}>
                                                     <NewProject />
                                                 </Grid>
@@ -164,6 +143,19 @@ function ProjectPage() {
                                         </TabPanel>
                                         <TabPanel value={value} index={2}>
                                             <Grid container spacing={3}>
+                                                {projects
+                                                    .filter((p) => p.status === 'Completed')
+                                                    .map((p) => (
+                                                        <Grid item xs={12} md={4} lg={4}>
+                                                            <Project
+                                                                key={p.title}
+                                                                title={p.title}
+                                                                description={p.description}
+                                                                dayLeft={p.dayLeft}
+                                                                progress={p.progress}
+                                                            />
+                                                        </Grid>
+                                                    ))}
                                                 <Grid item xs={12} md={4} lg={4}>
                                                     <NewProject />
                                                 </Grid>
@@ -171,6 +163,19 @@ function ProjectPage() {
                                         </TabPanel>
                                         <TabPanel value={value} index={3}>
                                             <Grid container spacing={3}>
+                                                {projects
+                                                    .filter((p) => p.status === 'Archived')
+                                                    .map((p) => (
+                                                        <Grid item xs={12} md={4} lg={4}>
+                                                            <Project
+                                                                key={p.title}
+                                                                title={p.title}
+                                                                description={p.description}
+                                                                dayLeft={p.dayLeft}
+                                                                progress={p.progress}
+                                                            />
+                                                        </Grid>
+                                                    ))}
                                                 <Grid item xs={12} md={4} lg={4}>
                                                     <NewProject />
                                                 </Grid>
