@@ -6,12 +6,10 @@ import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
 import { ProjectProps } from '../../../interface';
-import { statuses } from '../../../const';
 import styles from './Project.module.css';
 import { LinearProgress, linearProgressClasses } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ScheduleIcon from '@mui/icons-material/Schedule';
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 export default function Project({ title, description, progress, dayLeft }: ProjectProps) {
     const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({

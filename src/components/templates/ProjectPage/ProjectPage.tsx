@@ -1,31 +1,16 @@
 import React from 'react';
-import { ProjectProps, TaskProps } from '../../../interface';
-import { NavLink } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import SearchIcon from '@mui/icons-material/Search';
 import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Task from '../../molecules/Task/Task';
-import Sidebar from '../../molecules/Sidebar/Sidebar';
-import styles from './ProjectPage.module.css';
+import { Tab, Tabs, Grid, Paper, Typography, Container, Box } from '@mui/material';
 import { useAppSelector } from '../../../store/hooks';
-import { AppBar, Button, IconButton, InputBase, Tab, Tabs, Toolbar } from '@mui/material';
+import styles from './ProjectPage.module.css';
+import { ProjectProps, TabPanelProps } from '../../../interface';
+import Sidebar from '../../molecules/Sidebar/Sidebar';
 import Project from '../../molecules/Project/Project';
 import SearchBar from '../../atoms/SearchBar/SearchBar';
 import NewProject from '../../molecules/NewProject/NewProject';
 
 const mdTheme = createTheme();
-
-interface TabPanelProps {
-    children?: React.ReactNode;
-    index: number;
-    value: number;
-}
 
 function TabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props;
@@ -54,8 +39,6 @@ function ProjectPage() {
 
     const projects: ProjectProps[] = useAppSelector((state) => state.project.projects);
     const error = useAppSelector((state) => state.project.error);
-
-    console.log(projects);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);

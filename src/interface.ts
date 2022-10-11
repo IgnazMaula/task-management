@@ -6,6 +6,12 @@ export interface SideBarProps {
     toggleDrawer: () => void;
 }
 
+export interface TabPanelProps {
+    children?: React.ReactNode;
+    index: number;
+    value: number;
+}
+
 export interface TaskProps {
     title: string;
     closeDate: string;

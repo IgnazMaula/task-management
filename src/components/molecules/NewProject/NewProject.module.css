@@ -11,15 +11,6 @@
     text-align: center;
 }
 
-.cardTitle {
-    font-weight: bold !important;
-    margin-bottom: 0.5rem !important;
-}
-
-.cardHeader {
-    padding: 1rem;
-}
-
 .createNewText {
     font-weight: bold !important;
 }
