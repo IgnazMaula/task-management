@@ -12,3 +12,10 @@ export interface TaskProps {
     name: string;
     status: 'Default' | 'Urgent' | 'Canceled' | 'Completed' | 'Paid';
 }
+
+export interface ProjectProps {
+    title: string;
+    description: string;
+    dayLeft: number;
+    progress: number;
+}

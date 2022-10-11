@@ -5,10 +5,11 @@ import MockAdapter from 'axios-mock-adapter';
 
 import './App.css';
 import { TaskData } from './data';
-import BlankPage from './components/templates/BlankPage/BlankPage';
-import TaskPage from './components/templates/TaskPage/TaskPage';
 import { fetchTaskData } from './store/task-action';
 import { useAppDispatch } from './store/hooks';
+import BlankPage from './components/templates/BlankPage/BlankPage';
+import TaskPage from './components/templates/TaskPage/TaskPage';
+import ProjectPage from './components/templates/ProjectPage/ProjectPage';
 
 function App() {
     // Api Mock
@@ -27,6 +28,7 @@ function App() {
         <Router>
             <Routes>
                 <Route path='/' element={<TaskPage />}></Route>
+                <Route path='/projects' element={<ProjectPage />}></Route>
                 <Route path='*' element={<BlankPage />}></Route>
             </Routes>
         </Router>

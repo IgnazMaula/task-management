@@ -1,4 +1,5 @@
 .card {
+    padding-top: 0.5rem;
     margin-bottom: 0.5rem;
     box-shadow: 3px 3px 2px #EBEBEB;
 }
@@ -12,11 +13,21 @@
     font-weight: bold !important;
     margin-bottom: 0.5rem !important;
 }
+.progress {
+    text-align: right;
+    color: #9E9E9E;
+}
 
 .cardHeader {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
 }
+
+.projectAvatar {
+    width: 45px !important;
+    height: 45px !important;
+    background-color: #fc6b03 !important;
+}
+
 
 .avatar {
     width: 30px !important;
