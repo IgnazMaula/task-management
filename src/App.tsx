@@ -1,12 +1,12 @@
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { TaskData } from './data';
 
 import './App.css';
-import BlankPage from './Page/BlankPage';
-import TaskPage from './Page/TaskPage';
-import { useEffect } from 'react';
+import { TaskData } from './data';
+import BlankPage from './components/templates/BlankPage/BlankPage';
+import TaskPage from './components/templates/TaskPage/TaskPage';
 import { fetchTaskData } from './store/task-action';
 import { useAppDispatch } from './store/hooks';
 

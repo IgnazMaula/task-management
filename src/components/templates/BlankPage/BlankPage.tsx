@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../../molecules/Sidebar/Sidebar';
 import styles from './BlankPage.module.css';
 
 const mdTheme = createTheme();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TaskProps } from '../interface';
+import { TaskProps } from '../../../interface';
 import { NavLink } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -9,10 +9,10 @@ import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Task from '../components/Task';
-import Sidebar from '../components/Sidebar';
+import Task from '../../molecules/Task/Task';
+import Sidebar from '../../molecules/Sidebar/Sidebar';
 import styles from './TaskPage.module.css';
-import { useAppSelector } from '../store/hooks';
+import { useAppSelector } from '../../../store/hooks';
 
 const mdTheme = createTheme();
 
