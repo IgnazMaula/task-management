@@ -40,7 +40,7 @@ function IntegrationPage() {
                     <Container maxWidth='lg' className={styles.mainContainer}>
                         {error ? (
                             <Typography color='error' align='center'>
-                                Error - failed to retrieve task data
+                                Error - failed to retrieve integration data
                             </Typography>
                         ) : (
                             <Paper variant='outlined' className={styles.taskField}>

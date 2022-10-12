@@ -1,10 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
 
 import './App.css';
-import { TaskData, ProjectData, IntegrationData } from './data';
 import { useAppDispatch } from './store/hooks';
 import BlankPage from './components/templates/BlankPage/BlankPage';
 import TaskPage from './components/templates/TaskPage/TaskPage';
@@ -13,19 +10,11 @@ import { fetchTaskData } from './store/task-action';
 import { fetchProjectData } from './store/project-action';
 import { fetchIntegrationData } from './store/integration-action';
 import IntegrationPage from './components/templates/IntegrationPage/IntegrationPage';
+import useApiMock from './hooks/useApiMock';
 
 function App() {
     // Api Mock
-    var mock = new MockAdapter(axios);
-    mock.onGet('/api/tasks').reply(200, {
-        TaskData,
-    });
-    mock.onGet('/api/projects').reply(200, {
-        ProjectData,
-    });
-    mock.onGet('/api/integrations').reply(200, {
-        IntegrationData,
-    });
+    useApiMock();
 
     const dispatch = useAppDispatch();
 
