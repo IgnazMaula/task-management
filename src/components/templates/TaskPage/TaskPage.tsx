@@ -16,7 +16,7 @@ import { useAppSelector } from '../../../store/hooks';
 
 const mdTheme = createTheme();
 
-function TaskPage() {
+const TaskPage = () => {
     const [open, setOpen] = React.useState(true);
 
     const tasks: TaskProps[] = useAppSelector((state) => state.task.tasks);
@@ -102,6 +102,6 @@ function TaskPage() {
             </Box>
         </ThemeProvider>
     );
-}
+};
 
 export default TaskPage;

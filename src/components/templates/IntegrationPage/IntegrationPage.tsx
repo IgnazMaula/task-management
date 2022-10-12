@@ -1,17 +1,17 @@
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Tab, Tabs, Grid, Paper, Typography, Container, Box } from '@mui/material';
+import { Grid, Paper, Typography, Container, Box } from '@mui/material';
 import { useAppSelector } from '../../../store/hooks';
 import styles from './IntegrationPage.module.css';
-import { IntegrationProps, TabPanelProps } from '../../../interface';
+import { IntegrationProps } from '../../../interface';
 import Sidebar from '../../molecules/Sidebar/Sidebar';
 import Integration from '../../molecules/Integration/Integration';
 import SearchBar from '../../atoms/SearchBar/SearchBar';
 
 const mdTheme = createTheme();
 
-function IntegrationPage() {
+const IntegrationPage = () => {
     const [open, setOpen] = React.useState(true);
     const [value, setValue] = React.useState(0);
 
@@ -102,6 +102,6 @@ function IntegrationPage() {
             </Box>
         </ThemeProvider>
     );
-}
+};
 
 export default IntegrationPage;

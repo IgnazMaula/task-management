@@ -3,17 +3,13 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Chip from '@mui/material/Chip';
 import { IntegrationProps } from '../../../interface';
 import styles from './Integration.module.css';
-import ScheduleIcon from '@mui/icons-material/Schedule';
-import { CardMedia } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { NavLink } from 'react-router-dom';
 
-export default function Integration({ title, description, imageUrl, isConnect }: IntegrationProps) {
+const Integration = ({ title, description, imageUrl, isConnect }: IntegrationProps) => {
     return (
         <React.Fragment>
             <Card variant='outlined' className={styles.card}>
@@ -47,4 +43,6 @@ export default function Integration({ title, description, imageUrl, isConnect }:
             </Card>
         </React.Fragment>
     );
-}
+};
+
+export default Integration;

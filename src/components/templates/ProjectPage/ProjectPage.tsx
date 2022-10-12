@@ -33,7 +33,7 @@ function a11yProps(index: number) {
     };
 }
 
-function ProjectPage() {
+const ProjectPage = () => {
     const [open, setOpen] = React.useState(true);
     const [value, setValue] = React.useState(0);
 
@@ -173,6 +173,6 @@ function ProjectPage() {
             </Box>
         </ThemeProvider>
     );
-}
+};
 
 export default ProjectPage;

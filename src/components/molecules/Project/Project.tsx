@@ -7,23 +7,10 @@ import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
 import { ProjectProps } from '../../../interface';
 import styles from './Project.module.css';
-import { LinearProgress, linearProgressClasses } from '@mui/material';
 import ScheduleIcon from '@mui/icons-material/Schedule';
-import { styled } from '@mui/material/styles';
+import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
 
-export default function Project({ title, description, progress, dayLeft }: ProjectProps) {
-    const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-        height: 10,
-        borderRadius: 5,
-        [`&.${linearProgressClasses.colorPrimary}`]: {
-            backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
-        },
-        [`& .${linearProgressClasses.bar}`]: {
-            borderRadius: 5,
-            backgroundColor: theme.palette.mode === 'light' ? '#1a90ff' : '#308fe8',
-        },
-    }));
-
+const Project = ({ title, description, progress, dayLeft }: ProjectProps) => {
     return (
         <React.Fragment>
             <Card variant='outlined' className={styles.card}>
@@ -38,7 +25,7 @@ export default function Project({ title, description, progress, dayLeft }: Proje
                     <Typography fontSize={14} className={styles.progress}>
                         {progress} %
                     </Typography>
-                    <BorderLinearProgress variant='determinate' value={progress} />
+                    <ProgressBar variant='determinate' value={progress} />
                 </CardContent>
                 <CardHeader
                     className={styles.cardHeader}
@@ -48,4 +35,6 @@ export default function Project({ title, description, progress, dayLeft }: Proje
             </Card>
         </React.Fragment>
     );
-}
+};
+
+export default Project;
