@@ -11,7 +11,7 @@ import styles from './BlankPage.module.css';
 
 const mdTheme = createTheme();
 
-function BlankPage() {
+const BlankPage = () => {
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
@@ -38,6 +38,6 @@ function BlankPage() {
             </Box>
         </ThemeProvider>
     );
-}
+};
 
 export default BlankPage;

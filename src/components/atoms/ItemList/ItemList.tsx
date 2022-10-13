@@ -34,6 +34,14 @@ export const mainListItems = (
                 <ListItemText primary='Projects' />
             </ListItemButton>
         </NavLink>
+        <NavLink to='/integrations'>
+            <ListItemButton>
+                <ListItemIcon>
+                    <AddBoxIcon />
+                </ListItemIcon>
+                <ListItemText primary='Integrations' />
+            </ListItemButton>
+        </NavLink>
         <NavLink to='/dashboard'>
             <ListItemButton>
                 <ListItemIcon>
@@ -96,14 +104,6 @@ export const secondaryListItems = (
                     <SettingsIcon />
                 </ListItemIcon>
                 <ListItemText primary='Main Settings' />
-            </ListItemButton>
-        </NavLink>
-        <NavLink to='/integrations'>
-            <ListItemButton>
-                <ListItemIcon>
-                    <AddBoxIcon />
-                </ListItemIcon>
-                <ListItemText primary='Integrations' />
             </ListItemButton>
         </NavLink>
         <NavLink to='/payment'>

@@ -52,3 +52,44 @@ export const ProjectData = {
         },
     ],
 };
+
+export const IntegrationData = {
+    Integrations: [
+        {
+            title: 'Slack',
+            description: 'Slack is a digital workplace that connects you to the people and tools you work with everyday.',
+            imageUrl: 'https://cdn-icons-png.flaticon.com/512/2111/2111615.png',
+            isConnect: true,
+        },
+        {
+            title: 'Facebook Ads',
+            description: 'Connect your Facebook Ads account and never struggle to report on the success.',
+            imageUrl: 'https://cdn-icons-png.flaticon.com/512/733/733547.png',
+            isConnect: true,
+        },
+        {
+            title: 'Zendesk',
+            description: 'Gain more insights into the customer experience with the new Zendesk activity integration.',
+            imageUrl: 'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/zendesk-512.png',
+            isConnect: true,
+        },
+        {
+            title: 'MailChimp',
+            description: 'Connect your lead flows and collected forms to your MailChimp account.',
+            imageUrl: 'https://cdn-icons-png.flaticon.com/512/5968/5968879.png',
+            isConnect: false,
+        },
+        {
+            title: 'WordPress',
+            description: 'Connect with WordPress blog or website to convert website visitors into leads or buyers.',
+            imageUrl: 'https://cdn-icons-png.flaticon.com/512/59/59137.png',
+            isConnect: false,
+        },
+        {
+            title: 'Salesforce',
+            description: 'Sync Salesforce for a fast, reliable and powerful integratio between your two databases.',
+            imageUrl: 'https://cdn-icons-png.flaticon.com/512/5968/5968914.png',
+            isConnect: false,
+        },
+    ],
+};

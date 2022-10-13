@@ -33,7 +33,7 @@ function a11yProps(index: number) {
     };
 }
 
-function ProjectPage() {
+const ProjectPage = () => {
     const [open, setOpen] = React.useState(true);
     const [value, setValue] = React.useState(0);
 
@@ -62,7 +62,7 @@ function ProjectPage() {
                     <Container maxWidth='lg' className={styles.mainContainer}>
                         {error ? (
                             <Typography color='error' align='center'>
-                                Error - failed to retrieve task data
+                                Error - failed to retrieve project data
                             </Typography>
                         ) : (
                             <Paper variant='outlined' className={styles.taskField}>
@@ -173,6 +173,6 @@ function ProjectPage() {
             </Box>
         </ThemeProvider>
     );
-}
+};
 
 export default ProjectPage;

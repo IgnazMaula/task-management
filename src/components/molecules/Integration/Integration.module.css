@@ -1,0 +1,25 @@
+.card {
+    padding-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 3px 3px 2px #EBEBEB;
+}
+
+.cardContent {
+    padding-bottom: 0.5rem !important;
+    padding-top: 0.5rem !important;
+}
+
+.cardTitle {
+    font-weight: bold !important;
+    margin-bottom: 0.5rem !important;
+}
+.cardHeader {
+    padding: 1rem;
+}
+
+.appIcon {
+    display: block;
+    margin: 0 auto;
+    max-width: 85px;
+    padding: 25px;
+}

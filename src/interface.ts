@@ -26,3 +26,10 @@ export interface ProjectProps {
     progress: number;
     status?: string;
 }
+
+export interface IntegrationProps {
+    title: string;
+    description: string;
+    imageUrl: string;
+    isConnect: boolean;
+}

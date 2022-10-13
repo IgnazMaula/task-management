@@ -6,7 +6,7 @@ import styles from './NewProject.module.css';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { NavLink } from 'react-router-dom';
 
-export default function NewProject() {
+const NewProject = () => {
     return (
         <React.Fragment>
             <Card variant='outlined' className={styles.card}>
@@ -21,4 +21,6 @@ export default function NewProject() {
             </Card>
         </React.Fragment>
     );
-}
+};
+
+export default NewProject;

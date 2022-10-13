@@ -9,7 +9,7 @@ import { statuses } from '../../../const';
 import styles from './Task.module.css';
 import { Avatar } from '@mui/material';
 
-export default function Task({ title, closeDate, name, status }: TaskProps) {
+const Task = ({ title, closeDate, name, status }: TaskProps) => {
     return (
         <React.Fragment>
             <Card variant='outlined' className={styles.card}>
@@ -35,4 +35,6 @@ export default function Task({ title, closeDate, name, status }: TaskProps) {
             </Card>
         </React.Fragment>
     );
-}
+};
+
+export default Task;
