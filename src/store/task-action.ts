@@ -1,6 +1,7 @@
-import { taskAction } from '.';
 import axios from 'axios';
 import { Dispatch } from 'redux';
+
+import { taskAction } from '.';
 
 export const fetchTaskData = () => {
     return async (dispatch: Dispatch) => {
@@ -10,6 +11,7 @@ export const fetchTaskData = () => {
                 throw new Error(`This is an HTTP error: The status is ${response.status}`);
             }
             const data = await response.data;
+
             return data;
         };
 

@@ -1,14 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import { Box, Container, Grid, Paper, Typography } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Grid, Paper, Typography, Container, Box } from '@mui/material';
-import { useAppSelector } from '../../../store/hooks';
-import styles from './GalleryPage.module.css';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
 import { ImageProps } from '../../../interface';
-import Sidebar from '../../molecules/Sidebar/Sidebar';
-import ImageCard from '../../molecules/ImageCard/ImageCard';
+import { useAppSelector } from '../../../store/hooks';
 import GallerySearchBar from '../../atoms/GallerySearchBar/GallerySearchbar';
+import ImageCard from '../../molecules/ImageCard/ImageCard';
+import Sidebar from '../../molecules/Sidebar/Sidebar';
+import styles from './GalleryPage.module.css';
 
 const mdTheme = createTheme();
 
@@ -30,24 +32,25 @@ const GalleryPage = () => {
                 <CssBaseline />
                 <Sidebar open={open} setOpen={setOpen} toggleDrawer={toggleDrawer} />
                 <Box
-                    component='main'
+                    component="main"
                     className={styles.mainContent}
                     sx={{
-                        backgroundColor: (theme) => (theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900]),
+                        backgroundColor: (theme) =>
+                            theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
                     }}
                 >
-                    <Container maxWidth='lg' className={styles.mainContainer}>
+                    <Container maxWidth="lg" className={styles.mainContainer}>
                         {error ? (
-                            <Typography color='error' align='center'>
+                            <Typography color="error" align="center">
                                 Error - failed to retrieve gallery data
                             </Typography>
                         ) : (
-                            <Paper variant='outlined' className={styles.taskField}>
+                            <Paper variant="outlined" className={styles.taskField}>
                                 <Box sx={{ width: '100%' }}>
                                     <Box sx={{ borderBottom: 1, borderColor: 'divider', paddingBottom: 2 }}>
                                         <Grid container>
                                             <Grid item xs={6} md={6} lg={6}>
-                                                <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+                                                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                                     Image Gallery
                                                 </Typography>
                                             </Grid>
@@ -56,7 +59,11 @@ const GalleryPage = () => {
                                     </Box>
                                     <Box sx={{ marginTop: 1 }}>
                                         {keyWord !== '' && (
-                                            <Typography variant='h6' component='div' sx={{ flexGrow: 1, marginLeft: 3, marginBottom: 0 }}>
+                                            <Typography
+                                                variant="h6"
+                                                component="div"
+                                                sx={{ flexGrow: 1, marginLeft: 3, marginBottom: 0 }}
+                                            >
                                                 Search result for '{keyWord}'
                                             </Typography>
                                         )}

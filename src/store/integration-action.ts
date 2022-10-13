@@ -1,6 +1,7 @@
-import { integrationAction } from '.';
 import axios from 'axios';
 import { Dispatch } from 'redux';
+
+import { integrationAction } from '.';
 
 export const fetchIntegrationData = () => {
     return async (dispatch: Dispatch) => {
@@ -10,6 +11,7 @@ export const fetchIntegrationData = () => {
                 throw new Error(`This is an HTTP error: The status is ${response.status}`);
             }
             const data = await response.data;
+
             return data;
         };
 

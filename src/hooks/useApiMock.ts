@@ -1,6 +1,7 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { TaskData, ProjectData, IntegrationData, GalleryData } from '../data';
+
+import { GalleryData, IntegrationData, ProjectData, TaskData } from '../data';
 
 const useApiMock = () => {
     var mock = new MockAdapter(axios);

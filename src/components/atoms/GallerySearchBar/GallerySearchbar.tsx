@@ -1,9 +1,9 @@
 import React from 'react';
 
 import SearchIcon from '@mui/icons-material/Search';
+import { InputBase } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
-import { InputBase } from '@mui/material';
 import { Box } from '@mui/system';
 
 interface SearchBarProps {
@@ -11,7 +11,7 @@ interface SearchBarProps {
     setKeyword: any;
 }
 
-const GallerySearchBar = ({ keyWord, setKeyword }: SearchBarProps) => {
+const GallerySearchBar = ({ setKeyword }: SearchBarProps) => {
     const theme = createTheme({});
 
     const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -55,8 +55,8 @@ const GallerySearchBar = ({ keyWord, setKeyword }: SearchBarProps) => {
                             width: '1050px',
                         },
                     }}
-                    type='search'
-                    placeholder='Search…'
+                    type="search"
+                    placeholder="Search…"
                     inputProps={{ 'aria-label': 'search' }}
                     onChange={searchHandler}
                 />

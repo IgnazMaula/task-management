@@ -1,11 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit/';
-import taskSlice from './task-slice';
-import projectSlice from './project-slice';
-import integrationSlice from './integration-slice';
+
 import gallerySlice from './gallery-slice';
+import integrationSlice from './integration-slice';
+import projectSlice from './project-slice';
+import taskSlice from './task-slice';
 
 const store = configureStore({
-    reducer: { task: taskSlice.reducer, project: projectSlice.reducer, integration: integrationSlice.reducer, gallery: gallerySlice.reducer },
+    reducer: {
+        task: taskSlice.reducer,
+        project: projectSlice.reducer,
+        integration: integrationSlice.reducer,
+        gallery: gallerySlice.reducer,
+    },
 });
 
 export default store;

@@ -1,6 +1,7 @@
-import { galleryAction } from '.';
 import axios from 'axios';
 import { Dispatch } from 'redux';
+
+import { galleryAction } from '.';
 
 export const fetchGalleryData = () => {
     return async (dispatch: Dispatch) => {
@@ -10,6 +11,7 @@ export const fetchGalleryData = () => {
                 throw new Error(`This is an HTTP error: The status is ${response.status}`);
             }
             const data = await response.data;
+
             return data;
         };
 
