@@ -1,11 +1,13 @@
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
+
+import { Avatar, CardMedia } from '@mui/material';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import Typography from '@mui/material/Typography';
+
 import { ImageProps } from '../../../interface';
 import styles from './ImageCard.module.css';
-import { Avatar, CardMedia } from '@mui/material';
 
 const ImageCard = ({ title, author, imageUrl, date }: ImageProps) => {
     return (

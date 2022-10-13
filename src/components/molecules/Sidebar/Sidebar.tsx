@@ -37,7 +37,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     },
 }));
 
-const Sidebar = ({ open, setOpen, toggleDrawer }: SideBarProps) => {
+const Sidebar = ({ open, toggleDrawer }: SideBarProps) => {
     return (
         <Drawer variant="permanent" open={open}>
             <Toolbar className={styles.toolbar}>
