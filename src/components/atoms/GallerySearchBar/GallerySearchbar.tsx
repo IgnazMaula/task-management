@@ -55,8 +55,8 @@ const GallerySearchBar = ({ keyWord, setKeyword }: SearchBarProps) => {
                             width: '1050px',
                         },
                     }}
-                    type='search'
-                    placeholder='Search…'
+                    type="search"
+                    placeholder="Search…"
                     inputProps={{ 'aria-label': 'search' }}
                     onChange={searchHandler}
                 />

@@ -5,7 +5,12 @@ import integrationSlice from './integration-slice';
 import gallerySlice from './gallery-slice';
 
 const store = configureStore({
-    reducer: { task: taskSlice.reducer, project: projectSlice.reducer, integration: integrationSlice.reducer, gallery: gallerySlice.reducer },
+    reducer: {
+        task: taskSlice.reducer,
+        project: projectSlice.reducer,
+        integration: integrationSlice.reducer,
+        gallery: gallerySlice.reducer,
+    },
 });
 
 export default store;

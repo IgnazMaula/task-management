@@ -13,10 +13,10 @@ import { Avatar, CardMedia } from '@mui/material';
 const ImageCard = ({ title, author, imageUrl, date }: ImageProps) => {
     return (
         <React.Fragment>
-            <Card variant='outlined' className={styles.card}>
-                <CardMedia component='img' height='194' image={imageUrl} alt={title} />
+            <Card variant="outlined" className={styles.card}>
+                <CardMedia component="img" height="194" image={imageUrl} alt={title} />
                 <CardHeader
-                    avatar={<Avatar src='/author' alt={author} className={styles.avatar} />}
+                    avatar={<Avatar src="/author" alt={author} className={styles.avatar} />}
                     subheader={
                         <Typography fontSize={18} className={styles.cardTitle}>
                             {title}

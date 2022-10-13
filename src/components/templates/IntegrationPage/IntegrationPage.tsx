@@ -31,24 +31,25 @@ const IntegrationPage = () => {
                 <CssBaseline />
                 <Sidebar open={open} setOpen={setOpen} toggleDrawer={toggleDrawer} />
                 <Box
-                    component='main'
+                    component="main"
                     className={styles.mainContent}
                     sx={{
-                        backgroundColor: (theme) => (theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900]),
+                        backgroundColor: (theme) =>
+                            theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
                     }}
                 >
-                    <Container maxWidth='lg' className={styles.mainContainer}>
+                    <Container maxWidth="lg" className={styles.mainContainer}>
                         {error ? (
-                            <Typography color='error' align='center'>
+                            <Typography color="error" align="center">
                                 Error - failed to retrieve integration data
                             </Typography>
                         ) : (
-                            <Paper variant='outlined' className={styles.taskField}>
+                            <Paper variant="outlined" className={styles.taskField}>
                                 <Box sx={{ width: '100%' }}>
                                     <Box sx={{ borderBottom: 1, borderColor: 'divider', paddingBottom: 2 }}>
                                         <Grid container>
                                             <Grid item xs={6} md={6} lg={6}>
-                                                <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+                                                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                                     Integrations
                                                 </Typography>
                                             </Grid>
@@ -57,7 +58,7 @@ const IntegrationPage = () => {
                                     <Box sx={{ marginTop: 3 }}>
                                         <SearchBar />
                                         <br />
-                                        <Typography fontSize={15} className={styles.integrationStyle} color='#9E9E9E'>
+                                        <Typography fontSize={15} className={styles.integrationStyle} color="#9E9E9E">
                                             Your Integration
                                         </Typography>
                                         <Grid container spacing={3} sx={{ padding: 3 }}>
@@ -75,7 +76,7 @@ const IntegrationPage = () => {
                                                     </Grid>
                                                 ))}
                                         </Grid>
-                                        <Typography fontSize={15} className={styles.integrationStyle} color='#9E9E9E'>
+                                        <Typography fontSize={15} className={styles.integrationStyle} color="#9E9E9E">
                                             Popular Integration
                                         </Typography>
                                         <Grid container spacing={3} sx={{ padding: 3 }}>

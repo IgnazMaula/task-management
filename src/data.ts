@@ -57,7 +57,8 @@ export const IntegrationData = {
     Integrations: [
         {
             title: 'Slack',
-            description: 'Slack is a digital workplace that connects you to the people and tools you work with everyday.',
+            description:
+                'Slack is a digital workplace that connects you to the people and tools you work with everyday.',
             imageUrl: 'https://cdn-icons-png.flaticon.com/512/2111/2111615.png',
             isConnect: true,
         },

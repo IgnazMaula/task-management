@@ -22,5 +22,13 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "coverage",
+    "config",
+    "dist",
+    "node_modules/**",
+    "**/*.test.js",
+    "**/*.test.ts",
   ]
 }

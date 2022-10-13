@@ -18,76 +18,76 @@ import { NavLink } from 'react-router-dom';
 
 export const mainListItems = (
     <React.Fragment>
-        <NavLink to='/'>
+        <NavLink to="/">
             <ListItemButton>
                 <ListItemIcon>
                     <AssignmentIcon />
                 </ListItemIcon>
-                <ListItemText primary='My Tasks' />
+                <ListItemText primary="My Tasks" />
             </ListItemButton>
         </NavLink>
-        <NavLink to='/projects'>
+        <NavLink to="/projects">
             <ListItemButton>
                 <ListItemIcon>
                     <WorkIcon />
                 </ListItemIcon>
-                <ListItemText primary='Projects' />
+                <ListItemText primary="Projects" />
             </ListItemButton>
         </NavLink>
-        <NavLink to='/integrations'>
+        <NavLink to="/integrations">
             <ListItemButton>
                 <ListItemIcon>
                     <AddBoxIcon />
                 </ListItemIcon>
-                <ListItemText primary='Integrations' />
+                <ListItemText primary="Integrations" />
             </ListItemButton>
         </NavLink>
-        <NavLink to='/dashboard'>
+        <NavLink to="/dashboard">
             <ListItemButton>
                 <ListItemIcon>
                     <DashboardIcon />
                 </ListItemIcon>
-                <ListItemText primary='Dashboard' />
+                <ListItemText primary="Dashboard" />
             </ListItemButton>
         </NavLink>
-        <NavLink to='/schedule'>
+        <NavLink to="/schedule">
             <ListItemButton>
                 <ListItemIcon>
                     <WatchLaterIcon />
                 </ListItemIcon>
-                <ListItemText primary='Schedule' />
+                <ListItemText primary="Schedule" />
             </ListItemButton>
         </NavLink>
-        <NavLink to='/message'>
+        <NavLink to="/message">
             <ListItemButton>
                 <ListItemIcon>
                     <MessageIcon />
                 </ListItemIcon>
-                <ListItemText primary='Message' />
+                <ListItemText primary="Message" />
             </ListItemButton>
         </NavLink>
-        <NavLink to='/clients'>
+        <NavLink to="/clients">
             <ListItemButton>
                 <ListItemIcon>
                     <GroupIcon />
                 </ListItemIcon>
-                <ListItemText primary='Clients' />
+                <ListItemText primary="Clients" />
             </ListItemButton>
         </NavLink>
-        <NavLink to='/socialnetwork'>
+        <NavLink to="/socialnetwork">
             <ListItemButton>
                 <ListItemIcon>
                     <PublicIcon />
                 </ListItemIcon>
-                <ListItemText primary='Social Network' />
+                <ListItemText primary="Social Network" />
             </ListItemButton>
         </NavLink>
-        <NavLink to='/imagegallery'>
+        <NavLink to="/imagegallery">
             <ListItemButton>
                 <ListItemIcon>
                     <ImageIcon />
                 </ListItemIcon>
-                <ListItemText primary='Image Gallery' />
+                <ListItemText primary="Image Gallery" />
             </ListItemButton>
         </NavLink>
     </React.Fragment>
@@ -95,23 +95,23 @@ export const mainListItems = (
 
 export const secondaryListItems = (
     <React.Fragment>
-        <ListSubheader component='div' inset>
+        <ListSubheader component="div" inset>
             Settings
         </ListSubheader>
-        <NavLink to='/mainsettings'>
+        <NavLink to="/mainsettings">
             <ListItemButton>
                 <ListItemIcon>
                     <SettingsIcon />
                 </ListItemIcon>
-                <ListItemText primary='Main Settings' />
+                <ListItemText primary="Main Settings" />
             </ListItemButton>
         </NavLink>
-        <NavLink to='/payment'>
+        <NavLink to="/payment">
             <ListItemButton>
                 <ListItemIcon>
                     <CreditCardIcon />
                 </ListItemIcon>
-                <ListItemText primary='Payment' />
+                <ListItemText primary="Payment" />
             </ListItemButton>
         </NavLink>
     </React.Fragment>

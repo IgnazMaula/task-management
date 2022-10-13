@@ -9,11 +9,11 @@ import { NavLink } from 'react-router-dom';
 const NewProject = () => {
     return (
         <React.Fragment>
-            <Card variant='outlined' className={styles.card}>
-                <NavLink to='/projects'>
+            <Card variant="outlined" className={styles.card}>
+                <NavLink to="/projects">
                     <CardContent className={styles.cardContent}>
-                        <AddCircleIcon color='primary' />
-                        <Typography align='center' className={styles.createNewText} color='#9E9E9E'>
+                        <AddCircleIcon color="primary" />
+                        <Typography align="center" className={styles.createNewText} color="#9E9E9E">
                             CREATE NEW
                         </Typography>
                     </CardContent>

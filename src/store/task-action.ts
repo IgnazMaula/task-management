@@ -10,6 +10,7 @@ export const fetchTaskData = () => {
                 throw new Error(`This is an HTTP error: The status is ${response.status}`);
             }
             const data = await response.data;
+
             return data;
         };
 

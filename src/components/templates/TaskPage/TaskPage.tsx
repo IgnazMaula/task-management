@@ -34,62 +34,81 @@ const TaskPage = () => {
                 <CssBaseline />
                 <Sidebar open={open} setOpen={setOpen} toggleDrawer={toggleDrawer} />
                 <Box
-                    component='main'
+                    component="main"
                     className={styles.mainContent}
                     sx={{
-                        backgroundColor: (theme) => (theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900]),
+                        backgroundColor: (theme) =>
+                            theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
                     }}
                 >
-                    <Container maxWidth='lg' className={styles.mainContainer}>
+                    <Container maxWidth="lg" className={styles.mainContainer}>
                         {error ? (
-                            <Typography color='error' align='center'>
+                            <Typography color="error" align="center">
                                 Error - failed to retrieve task data
                             </Typography>
                         ) : (
                             <Grid container spacing={3}>
                                 <Grid item xs={12} md={4} lg={4}>
-                                    <Paper variant='outlined' className={styles.taskField}>
-                                        <Typography variant='h5' className={styles.taskTitle}>
+                                    <Paper variant="outlined" className={styles.taskField}>
+                                        <Typography variant="h5" className={styles.taskTitle}>
                                             Tasks
                                         </Typography>
                                         <Divider className={styles.divider} />
                                         {tasks.map((t) => (
-                                            <Task key={t.title} title={t.title} closeDate={t.closeDate} name={t.name} status={t.status} />
+                                            <Task
+                                                key={t.title}
+                                                title={t.title}
+                                                closeDate={t.closeDate}
+                                                name={t.name}
+                                                status={t.status}
+                                            />
                                         ))}
-                                        <NavLink to='/newtask'>
-                                            <Typography align='center' className={styles.createNewText} color='#9E9E9E'>
+                                        <NavLink to="/newtask">
+                                            <Typography align="center" className={styles.createNewText} color="#9E9E9E">
                                                 CREATE NEW
                                             </Typography>
                                         </NavLink>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={12} md={4} lg={4}>
-                                    <Paper variant='outlined' className={styles.taskField}>
-                                        <Typography variant='h5' className={styles.taskTitle}>
+                                    <Paper variant="outlined" className={styles.taskField}>
+                                        <Typography variant="h5" className={styles.taskTitle}>
                                             Completed Tasks
                                         </Typography>
                                         <Divider className={styles.divider} />
                                         {completedTasks.map((t) => (
-                                            <Task key={t.title} title={t.title} closeDate={t.closeDate} name={t.name} status={t.status} />
+                                            <Task
+                                                key={t.title}
+                                                title={t.title}
+                                                closeDate={t.closeDate}
+                                                name={t.name}
+                                                status={t.status}
+                                            />
                                         ))}
-                                        <NavLink to='/newtask'>
-                                            <Typography align='center' className={styles.createNewText} color='#9E9E9E'>
+                                        <NavLink to="/newtask">
+                                            <Typography align="center" className={styles.createNewText} color="#9E9E9E">
                                                 CREATE NEW
                                             </Typography>
                                         </NavLink>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={12} md={4} lg={4}>
-                                    <Paper variant='outlined' className={styles.taskField}>
-                                        <Typography variant='h5' className={styles.taskTitle}>
+                                    <Paper variant="outlined" className={styles.taskField}>
+                                        <Typography variant="h5" className={styles.taskTitle}>
                                             Canceled Tasks
                                         </Typography>
                                         <Divider className={styles.divider} />
                                         {canceledTasks.map((t) => (
-                                            <Task key={t.title} title={t.title} closeDate={t.closeDate} name={t.name} status={t.status} />
+                                            <Task
+                                                key={t.title}
+                                                title={t.title}
+                                                closeDate={t.closeDate}
+                                                name={t.name}
+                                                status={t.status}
+                                            />
                                         ))}
-                                        <NavLink to='/newtask'>
-                                            <Typography align='center' className={styles.createNewText} color='#9E9E9E'>
+                                        <NavLink to="/newtask">
+                                            <Typography align="center" className={styles.createNewText} color="#9E9E9E">
                                                 CREATE NEW
                                             </Typography>
                                         </NavLink>

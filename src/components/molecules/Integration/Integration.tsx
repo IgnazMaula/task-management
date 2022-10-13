@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 const Integration = ({ title, description, imageUrl, isConnect }: IntegrationProps) => {
     return (
         <React.Fragment>
-            <Card variant='outlined' className={styles.card}>
+            <Card variant="outlined" className={styles.card}>
                 <img className={styles.appIcon} src={imageUrl} alt={title} />
                 <CardContent className={styles.cardContent}>
                     <Typography fontSize={18} className={styles.cardTitle}>
@@ -25,17 +25,17 @@ const Integration = ({ title, description, imageUrl, isConnect }: IntegrationPro
                     className={styles.cardHeader}
                     avatar={
                         isConnect ? (
-                            <Button size='medium' disabled>
+                            <Button size="medium" disabled>
                                 CONNECTED
                             </Button>
                         ) : (
-                            <Button size='medium'>CONNECT</Button>
+                            <Button size="medium">CONNECT</Button>
                         )
                     }
                     action={
                         isConnect && (
-                            <NavLink to='/integrations'>
-                                <DeleteIcon sx={{ marginRight: 1, marginTop: 0.3 }} color='disabled' />
+                            <NavLink to="/integrations">
+                                <DeleteIcon sx={{ marginRight: 1, marginTop: 0.3 }} color="disabled" />
                             </NavLink>
                         )
                     }

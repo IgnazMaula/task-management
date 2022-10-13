@@ -30,11 +30,11 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path='/' element={<TaskPage />}></Route>
-                <Route path='/projects' element={<ProjectPage />}></Route>
-                <Route path='/integrations' element={<IntegrationPage />}></Route>
-                <Route path='/imagegallery' element={<GalleryPage />}></Route>
-                <Route path='*' element={<BlankPage />}></Route>
+                <Route path="/" element={<TaskPage />}></Route>
+                <Route path="/projects" element={<ProjectPage />}></Route>
+                <Route path="/integrations" element={<IntegrationPage />}></Route>
+                <Route path="/imagegallery" element={<GalleryPage />}></Route>
+                <Route path="*" element={<BlankPage />}></Route>
             </Routes>
         </Router>
     );

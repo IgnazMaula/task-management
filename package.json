@@ -17,7 +17,6 @@
     "@types/react-dom": "^18.0.6",
     "axios": "^1.0.0",
     "axios-mock-adapter": "^1.21.2",
-    "eslint": "^8.24.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
@@ -32,13 +31,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "eslint:fix": "eslint . --ext .js,.jsx,.tsx,.ts --fix"
   },
   "browserslist": {
     "production": [
@@ -53,6 +47,13 @@
     ]
   },
   "devDependencies": {
-    "typescript-plugin-css-modules": "^3.4.0"
+    "eslint": "8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-storybook": "^0.6.6",
+    "prettier": "2.7.1",
+    "typescript-plugin-css-modules": "^3.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0"
   }
 }

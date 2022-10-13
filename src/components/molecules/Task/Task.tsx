@@ -12,7 +12,7 @@ import { Avatar } from '@mui/material';
 const Task = ({ title, closeDate, name, status }: TaskProps) => {
     return (
         <React.Fragment>
-            <Card variant='outlined' className={styles.card}>
+            <Card variant="outlined" className={styles.card}>
                 <CardContent className={styles.cardContent}>
                     <Typography className={styles.cardTitle}>{title}</Typography>
                     <Typography color={'#bababa'} fontSize={14}>
@@ -21,13 +21,13 @@ const Task = ({ title, closeDate, name, status }: TaskProps) => {
                 </CardContent>
                 <CardHeader
                     className={styles.cardHeader}
-                    avatar={<Avatar className={styles.avatar} alt={name} src='name' />}
+                    avatar={<Avatar className={styles.avatar} alt={name} src="name" />}
                     title={name}
                     action={
                         <Chip
                             label={status}
                             color={statuses[status].color}
-                            variant='outlined'
+                            variant="outlined"
                             sx={{ backgroundColor: statuses[status].backgroundColor }}
                         />
                     }

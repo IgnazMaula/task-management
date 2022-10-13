@@ -38,14 +38,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const Sidebar = ({ open, setOpen, toggleDrawer }: SideBarProps) => {
     return (
-        <Drawer variant='permanent' open={open}>
+        <Drawer variant="permanent" open={open}>
             <Toolbar className={styles.toolbar}>
                 <IconButton onClick={toggleDrawer}>
                     <ChevronLeftIcon />
                 </IconButton>
             </Toolbar>
             <Divider />
-            <List component='nav'>
+            <List component="nav">
                 {mainListItems}
                 <Divider className={styles.divider} />
                 {secondaryListItems}
