@@ -33,3 +33,10 @@ export interface IntegrationProps {
     imageUrl: string;
     isConnect: boolean;
 }
+
+export interface ImageProps {
+    title: string;
+    author: string;
+    imageUrl: string;
+    date: string;
+}

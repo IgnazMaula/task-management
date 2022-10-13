@@ -9,7 +9,9 @@ import ProjectPage from './components/templates/ProjectPage/ProjectPage';
 import { fetchTaskData } from './store/task-action';
 import { fetchProjectData } from './store/project-action';
 import { fetchIntegrationData } from './store/integration-action';
+import { fetchGalleryData } from './store/gallery-action';
 import IntegrationPage from './components/templates/IntegrationPage/IntegrationPage';
+import GalleryPage from './components/templates/GalleryPage/GalleryPage';
 import useApiMock from './hooks/useApiMock';
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
         dispatch(fetchTaskData());
         dispatch(fetchProjectData());
         dispatch(fetchIntegrationData());
+        dispatch(fetchGalleryData());
     }, [dispatch]);
 
     return (
@@ -30,6 +33,7 @@ function App() {
                 <Route path='/' element={<TaskPage />}></Route>
                 <Route path='/projects' element={<ProjectPage />}></Route>
                 <Route path='/integrations' element={<IntegrationPage />}></Route>
+                <Route path='/imagegallery' element={<GalleryPage />}></Route>
                 <Route path='*' element={<BlankPage />}></Route>
             </Routes>
         </Router>

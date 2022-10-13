@@ -93,3 +93,14 @@ export const IntegrationData = {
         },
     ],
 };
+
+export const GalleryData = {
+    Images: [
+        { title: 'Stuttgart Library', author: 'Lindsey Stroud', imageUrl: './images/1.jpg', date: 'June 22, 2019' },
+        { title: 'Camera', author: 'George Fields', imageUrl: './images/2.jpg', date: 'June 19, 2019' },
+        { title: 'History Museum', author: 'Cindy Sherman', imageUrl: './images/3.jpg', date: 'June 18, 2019' },
+        { title: 'Guitar', author: 'Martin Merces', imageUrl: './images/4.jpg', date: 'June 15, 2019' },
+        { title: 'Games', author: 'Joseph Gonzalez', imageUrl: './images/5.jpg', date: 'June 11, 2019' },
+        { title: 'Filmroll', author: 'Nikol Ricci', imageUrl: './images/6.jpg', date: 'June 7, 2019' },
+    ],
+};
