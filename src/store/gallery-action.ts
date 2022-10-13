@@ -1,11 +1,12 @@
-import { galleryAction } from ".";
-import axios from "axios";
-import { Dispatch } from "redux";
+import axios from 'axios';
+import { Dispatch } from 'redux';
+
+import { galleryAction } from '.';
 
 export const fetchGalleryData = () => {
     return async (dispatch: Dispatch) => {
         const fetchData = async () => {
-            const response = await axios("/api/gallery");
+            const response = await axios('/api/gallery');
             if (response.status !== 200) {
                 throw new Error(`This is an HTTP error: The status is ${response.status}`);
             }

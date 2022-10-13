@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Sidebar from "../../molecules/Sidebar/Sidebar";
-import styles from "./BlankPage.module.css";
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+
+import Sidebar from '../../molecules/Sidebar/Sidebar';
+import styles from './BlankPage.module.css';
 
 const mdTheme = createTheme();
 
@@ -27,7 +28,7 @@ const BlankPage = () => {
                     className={styles.mainContent}
                     sx={{
                         backgroundColor: (theme) =>
-                            theme.palette.mode === "light" ? theme.palette.grey[100] : theme.palette.grey[900],
+                            theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
                     }}
                 >
                     <Container maxWidth="lg" className={styles.mainContainer}>

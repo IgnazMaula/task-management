@@ -1,20 +1,22 @@
-import React from "react";
-import { useState } from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { Grid, Paper, Typography, Container, Box } from "@mui/material";
-import { useAppSelector } from "../../../store/hooks";
-import styles from "./GalleryPage.module.css";
-import { ImageProps } from "../../../interface";
-import Sidebar from "../../molecules/Sidebar/Sidebar";
-import ImageCard from "../../molecules/ImageCard/ImageCard";
-import GallerySearchBar from "../../atoms/GallerySearchBar/GallerySearchbar";
+import React from 'react';
+import { useState } from 'react';
+
+import { Box, Container, Grid, Paper, Typography } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+import { ImageProps } from '../../../interface';
+import { useAppSelector } from '../../../store/hooks';
+import GallerySearchBar from '../../atoms/GallerySearchBar/GallerySearchbar';
+import ImageCard from '../../molecules/ImageCard/ImageCard';
+import Sidebar from '../../molecules/Sidebar/Sidebar';
+import styles from './GalleryPage.module.css';
 
 const mdTheme = createTheme();
 
 const GalleryPage = () => {
     const [open, setOpen] = useState(true);
-    const [keyWord, setKeyWord] = useState("");
+    const [keyWord, setKeyWord] = useState('');
 
     const images: ImageProps[] = useAppSelector((state) => state.gallery.images);
 
@@ -34,7 +36,7 @@ const GalleryPage = () => {
                     className={styles.mainContent}
                     sx={{
                         backgroundColor: (theme) =>
-                            theme.palette.mode === "light" ? theme.palette.grey[100] : theme.palette.grey[900],
+                            theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
                     }}
                 >
                     <Container maxWidth="lg" className={styles.mainContainer}>
@@ -44,8 +46,8 @@ const GalleryPage = () => {
                             </Typography>
                         ) : (
                             <Paper variant="outlined" className={styles.taskField}>
-                                <Box sx={{ width: "100%" }}>
-                                    <Box sx={{ borderBottom: 1, borderColor: "divider", paddingBottom: 2 }}>
+                                <Box sx={{ width: '100%' }}>
+                                    <Box sx={{ borderBottom: 1, borderColor: 'divider', paddingBottom: 2 }}>
                                         <Grid container>
                                             <Grid item xs={6} md={6} lg={6}>
                                                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -56,7 +58,7 @@ const GalleryPage = () => {
                                         </Grid>
                                     </Box>
                                     <Box sx={{ marginTop: 1 }}>
-                                        {keyWord !== "" && (
+                                        {keyWord !== '' && (
                                             <Typography
                                                 variant="h6"
                                                 component="div"

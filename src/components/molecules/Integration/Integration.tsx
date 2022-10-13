@@ -1,15 +1,17 @@
-import * as React from "react";
-import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import { IntegrationProps } from "../../../interface";
-import styles from "./Integration.module.css";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { NavLink } from "react-router-dom";
+import * as React from 'react';
 
-const Integration = ({ title, description, imageUrl, isConnect }: IntegrationProps) => {
+import DeleteIcon from '@mui/icons-material/Delete';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import Typography from '@mui/material/Typography';
+import { NavLink } from 'react-router-dom';
+
+import { IntegrationProps } from '../../../interface';
+import styles from './Integration.module.css';
+
+const Integration = ({ title, description, imageUrl, isConnect }: IntegrationProps): React.ReactNode => {
     return (
         <React.Fragment>
             <Card variant="outlined" className={styles.card}>

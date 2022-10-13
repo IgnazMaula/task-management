@@ -1,18 +1,20 @@
-import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { useEffect } from 'react';
 
-import "./App.css";
-import { useAppDispatch } from "./store/hooks";
-import BlankPage from "./components/templates/BlankPage/BlankPage";
-import TaskPage from "./components/templates/TaskPage/TaskPage";
-import ProjectPage from "./components/templates/ProjectPage/ProjectPage";
-import { fetchTaskData } from "./store/task-action";
-import { fetchProjectData } from "./store/project-action";
-import { fetchIntegrationData } from "./store/integration-action";
-import { fetchGalleryData } from "./store/gallery-action";
-import IntegrationPage from "./components/templates/IntegrationPage/IntegrationPage";
-import GalleryPage from "./components/templates/GalleryPage/GalleryPage";
-import useApiMock from "./hooks/useApiMock";
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+
+import './App.css';
+import BlankPage from './components/templates/BlankPage/BlankPage';
+import GalleryPage from './components/templates/GalleryPage/GalleryPage';
+import IntegrationPage from './components/templates/IntegrationPage/IntegrationPage';
+import ProjectPage from './components/templates/ProjectPage/ProjectPage';
+import TaskPage from './components/templates/TaskPage/TaskPage';
+import useApiMock from './hooks/useApiMock';
+import { fetchGalleryData } from './store/gallery-action';
+import { useAppDispatch } from './store/hooks';
+import { fetchIntegrationData } from './store/integration-action';
+import { fetchProjectData } from './store/project-action';
+import { fetchTaskData } from './store/task-action';
 
 function App() {
     // Api Mock

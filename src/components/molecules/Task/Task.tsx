@@ -1,13 +1,15 @@
-import * as React from "react";
-import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardContent from "@mui/material/CardContent";
-import Chip from "@mui/material/Chip";
-import { TaskProps } from "../../../interface";
-import { statuses } from "../../../const";
-import styles from "./Task.module.css";
-import { Avatar } from "@mui/material";
+import * as React from 'react';
+
+import { Avatar } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import Chip from '@mui/material/Chip';
+import Typography from '@mui/material/Typography';
+
+import { statuses } from '../../../const';
+import { TaskProps } from '../../../interface';
+import styles from './Task.module.css';
 
 const Task = ({ title, closeDate, name, status }: TaskProps) => {
     return (
@@ -15,7 +17,7 @@ const Task = ({ title, closeDate, name, status }: TaskProps) => {
             <Card variant="outlined" className={styles.card}>
                 <CardContent className={styles.cardContent}>
                     <Typography className={styles.cardTitle}>{title}</Typography>
-                    <Typography color={"#bababa"} fontSize={14}>
+                    <Typography color={'#bababa'} fontSize={14}>
                         Close date: {closeDate}
                     </Typography>
                 </CardContent>

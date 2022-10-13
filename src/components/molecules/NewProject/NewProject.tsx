@@ -1,10 +1,12 @@
-import * as React from "react";
-import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import styles from "./NewProject.module.css";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { NavLink } from "react-router-dom";
+import * as React from 'react';
+
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import { NavLink } from 'react-router-dom';
+
+import styles from './NewProject.module.css';
 
 const NewProject = () => {
     return (

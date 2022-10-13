@@ -1,35 +1,36 @@
-import React from "react";
+import React from 'react';
 
-import { styled } from "@mui/material/styles";
-import MuiDrawer from "@mui/material/Drawer";
-import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { mainListItems, secondaryListItems } from "../../atoms/ItemList/ItemList";
-import { SideBarProps } from "../../../interface";
-import styles from "./Sidebar.module.css";
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import Divider from '@mui/material/Divider';
+import MuiDrawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import { styled } from '@mui/material/styles';
+import Toolbar from '@mui/material/Toolbar';
+
+import { SideBarProps } from '../../../interface';
+import { mainListItems, secondaryListItems } from '../../atoms/ItemList/ItemList';
+import styles from './Sidebar.module.css';
 
 const drawerWidth: number = 240;
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" })(({ theme, open }) => ({
-    "& .MuiDrawer-paper": {
-        position: "relative",
-        whiteSpace: "nowrap",
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
+    '& .MuiDrawer-paper': {
+        position: 'relative',
+        whiteSpace: 'nowrap',
         width: drawerWidth,
-        transition: theme.transitions.create("width", {
+        transition: theme.transitions.create('width', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
-        boxSizing: "border-box",
+        boxSizing: 'border-box',
         ...(!open && {
-            overflowX: "hidden",
-            transition: theme.transitions.create("width", {
+            overflowX: 'hidden',
+            transition: theme.transitions.create('width', {
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.leavingScreen,
             }),
             width: theme.spacing(7),
-            [theme.breakpoints.up("sm")]: {
+            [theme.breakpoints.up('sm')]: {
                 width: theme.spacing(9),
             },
         }),
