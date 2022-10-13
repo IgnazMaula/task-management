@@ -9,8 +9,8 @@
 }
 
 .mainContainer {
-    margin-top: 2rem; 
-    margin-bottom: 2rem; 
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .taskField {
@@ -37,4 +37,3 @@
     font-weight: bold !important;
     padding-top: 1rem;
 }
-
