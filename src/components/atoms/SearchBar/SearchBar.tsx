@@ -1,9 +1,8 @@
 import React from 'react';
 
 import SearchIcon from '@mui/icons-material/Search';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { styled, alpha } from '@mui/material/styles';
-import { AppBar, Button, IconButton, InputBase, Tab, Tabs, Toolbar } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { InputBase } from '@mui/material';
 
 const SearchBar = () => {
     const Search = styled('div')(({ theme }) => ({

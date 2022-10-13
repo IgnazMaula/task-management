@@ -3,11 +3,8 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import { ImageProps } from '../../../interface';
 import styles from './ImageCard.module.css';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { NavLink } from 'react-router-dom';
 import { Avatar, CardMedia } from '@mui/material';
 
 const ImageCard = ({ title, author, imageUrl, date }: ImageProps) => {

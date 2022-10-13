@@ -1,5 +1,3 @@
-import React from 'react';
-
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { TaskData, ProjectData, IntegrationData, GalleryData } from '../data';

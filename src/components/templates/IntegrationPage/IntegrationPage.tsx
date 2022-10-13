@@ -13,14 +13,10 @@ const mdTheme = createTheme();
 
 const IntegrationPage = () => {
     const [open, setOpen] = React.useState(true);
-    const [value, setValue] = React.useState(0);
 
     const integrations: IntegrationProps[] = useAppSelector((state) => state.integration.integrations);
     const error = useAppSelector((state) => state.integration.error);
 
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
-    };
     const toggleDrawer = () => {
         setOpen(!open);
     };
