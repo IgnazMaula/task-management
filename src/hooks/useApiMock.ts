@@ -1,8 +1,7 @@
-import React from 'react';
-
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { TaskData, ProjectData, IntegrationData } from '../data';
+
+import { GalleryData, IntegrationData, ProjectData, TaskData } from '../data';
 
 const useApiMock = () => {
     var mock = new MockAdapter(axios);
@@ -14,6 +13,9 @@ const useApiMock = () => {
     });
     mock.onGet('/api/integrations').reply(200, {
         IntegrationData,
+    });
+    mock.onGet('/api/gallery').reply(200, {
+        GalleryData,
     });
 };
 

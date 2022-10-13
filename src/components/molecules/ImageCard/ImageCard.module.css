@@ -1,4 +1,5 @@
 .card {
+    padding-top: 0.5rem;
     margin-bottom: 0.5rem;
     box-shadow: 3px 3px 2px #ebebeb;
 }
@@ -14,12 +15,9 @@
 }
 
 .cardHeader {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
 }
 
 .avatar {
-    width: 30px !important;
-    height: 30px !important;
     background-color: #2196f3 !important;
 }

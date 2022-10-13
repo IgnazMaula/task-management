@@ -1,6 +1,7 @@
-import { projectAction } from '.';
 import axios from 'axios';
 import { Dispatch } from 'redux';
+
+import { projectAction } from '.';
 
 export const fetchProjectData = () => {
     return async (dispatch: Dispatch) => {
@@ -10,6 +11,7 @@ export const fetchProjectData = () => {
                 throw new Error(`This is an HTTP error: The status is ${response.status}`);
             }
             const data = await response.data;
+
             return data;
         };
 

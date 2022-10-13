@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
 
-import { integrationAction } from '.';
+import { galleryAction } from '.';
 
-export const fetchIntegrationData = () => {
+export const fetchGalleryData = () => {
     return async (dispatch: Dispatch) => {
         const fetchData = async () => {
-            const response = await axios('/api/integrations');
+            const response = await axios('/api/gallery');
             if (response.status !== 200) {
                 throw new Error(`This is an HTTP error: The status is ${response.status}`);
             }
@@ -16,14 +16,14 @@ export const fetchIntegrationData = () => {
         };
 
         try {
-            const integrationData = await fetchData();
+            const galleryData = await fetchData();
             dispatch(
-                integrationAction.replaceIntegrations({
-                    integrations: integrationData.IntegrationData.Integrations,
+                galleryAction.replaceGallery({
+                    images: galleryData.GalleryData.Images,
                 })
             );
         } catch (error) {
-            dispatch(integrationAction.isError({ error: true }));
+            dispatch(galleryAction.isError({ error: true }));
         }
     };
 };

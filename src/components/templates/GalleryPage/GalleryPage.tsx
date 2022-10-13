@@ -1,22 +1,25 @@
 import React from 'react';
+import { useState } from 'react';
 
 import { Box, Container, Grid, Paper, Typography } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import { IntegrationProps } from '../../../interface';
+import { ImageProps } from '../../../interface';
 import { useAppSelector } from '../../../store/hooks';
-import SearchBar from '../../atoms/SearchBar/SearchBar';
-import Integration from '../../molecules/Integration/Integration';
+import GallerySearchBar from '../../atoms/GallerySearchBar/GallerySearchbar';
+import ImageCard from '../../molecules/ImageCard/ImageCard';
 import Sidebar from '../../molecules/Sidebar/Sidebar';
-import styles from './IntegrationPage.module.css';
+import styles from './GalleryPage.module.css';
 
 const mdTheme = createTheme();
 
-const IntegrationPage = () => {
-    const [open, setOpen] = React.useState(true);
+const GalleryPage = () => {
+    const [open, setOpen] = useState(true);
+    const [keyWord, setKeyWord] = useState('');
 
-    const integrations: IntegrationProps[] = useAppSelector((state) => state.integration.integrations);
+    const images: ImageProps[] = useAppSelector((state) => state.gallery.images);
+
     const error = useAppSelector((state) => state.integration.error);
 
     const toggleDrawer = () => {
@@ -39,7 +42,7 @@ const IntegrationPage = () => {
                     <Container maxWidth="lg" className={styles.mainContainer}>
                         {error ? (
                             <Typography color="error" align="center">
-                                Error - failed to retrieve integration data
+                                Error - failed to retrieve gallery data
                             </Typography>
                         ) : (
                             <Paper variant="outlined" className={styles.taskField}>
@@ -48,46 +51,38 @@ const IntegrationPage = () => {
                                         <Grid container>
                                             <Grid item xs={6} md={6} lg={6}>
                                                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                                                    Integrations
+                                                    Image Gallery
                                                 </Typography>
                                             </Grid>
+                                            <GallerySearchBar setKeyword={setKeyWord} keyWord={keyWord} />
                                         </Grid>
                                     </Box>
-                                    <Box sx={{ marginTop: 3 }}>
-                                        <SearchBar />
+                                    <Box sx={{ marginTop: 1 }}>
+                                        {keyWord !== '' && (
+                                            <Typography
+                                                variant="h6"
+                                                component="div"
+                                                sx={{ flexGrow: 1, marginLeft: 3, marginBottom: 0 }}
+                                            >
+                                                Search result for '{keyWord}'
+                                            </Typography>
+                                        )}
                                         <br />
-                                        <Typography fontSize={15} className={styles.integrationStyle} color="#9E9E9E">
-                                            Your Integration
-                                        </Typography>
                                         <Grid container spacing={3} sx={{ padding: 3 }}>
-                                            {integrations
-                                                .filter((i) => i.isConnect)
+                                            {images
+                                                .filter(
+                                                    (i) =>
+                                                        i.title.toLowerCase().includes(keyWord.toLowerCase()) ||
+                                                        i.author.toLowerCase().includes(keyWord.toLowerCase())
+                                                )
                                                 .map((i) => (
                                                     <Grid item xs={12} md={4} lg={4}>
-                                                        <Integration
+                                                        <ImageCard
                                                             key={i.title}
                                                             title={i.title}
-                                                            description={i.description}
+                                                            author={i.author}
                                                             imageUrl={i.imageUrl}
-                                                            isConnect={i.isConnect}
-                                                        />
-                                                    </Grid>
-                                                ))}
-                                        </Grid>
-                                        <Typography fontSize={15} className={styles.integrationStyle} color="#9E9E9E">
-                                            Popular Integration
-                                        </Typography>
-                                        <Grid container spacing={3} sx={{ padding: 3 }}>
-                                            {integrations
-                                                .filter((i) => !i.isConnect)
-                                                .map((i) => (
-                                                    <Grid item xs={12} md={4} lg={4}>
-                                                        <Integration
-                                                            key={i.title}
-                                                            title={i.title}
-                                                            description={i.description}
-                                                            imageUrl={i.imageUrl}
-                                                            isConnect={i.isConnect}
+                                                            date={i.date}
                                                         />
                                                     </Grid>
                                                 ))}
@@ -103,4 +98,4 @@ const IntegrationPage = () => {
     );
 };
 
-export default IntegrationPage;
+export default GalleryPage;
