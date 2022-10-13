@@ -14,10 +14,13 @@
 }
 
 .taskField {
+    padding-top: 1.5rem;
     padding: 1rem;
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
     height: 865px;
+    width: 100%;
 }
 
 .taskTitle {
