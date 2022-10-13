@@ -24,25 +24,6 @@ const ImageCard = ({ title, author, imageUrl, date }: ImageProps) => {
                 <CardContent className={styles.cardContent}>
                     <Typography fontSize={11}>{date}</Typography>
                 </CardContent>
-                {/* <CardHeader
-                    className={styles.cardHeader}
-                    avatar={
-                        isConnect ? (
-                            <Button size='medium' disabled>
-                                CONNECTED
-                            </Button>
-                        ) : (
-                            <Button size='medium'>CONNECT</Button>
-                        )
-                    }
-                    action={
-                        isConnect && (
-                            <NavLink to='/integrations'>
-                                <DeleteIcon sx={{ marginRight: 1, marginTop: 0.3 }} color='disabled' />
-                            </NavLink>
-                        )
-                    }
-                /> */}
             </Card>
         </React.Fragment>
     );
