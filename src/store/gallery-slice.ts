@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const gallerySlice = createSlice({
-    name: 'gallery',
+    name: "gallery",
     initialState: { images: [], error: false },
     reducers: {
         replaceGallery(state, action) {

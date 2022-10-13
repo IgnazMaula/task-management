@@ -1,14 +1,14 @@
-import React from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { Tab, Tabs, Grid, Paper, Typography, Container, Box } from '@mui/material';
-import { useAppSelector } from '../../../store/hooks';
-import styles from './ProjectPage.module.css';
-import { ProjectProps, TabPanelProps } from '../../../interface';
-import Sidebar from '../../molecules/Sidebar/Sidebar';
-import Project from '../../molecules/Project/Project';
-import SearchBar from '../../atoms/SearchBar/SearchBar';
-import NewProject from '../../molecules/NewProject/NewProject';
+import React from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { Tab, Tabs, Grid, Paper, Typography, Container, Box } from "@mui/material";
+import { useAppSelector } from "../../../store/hooks";
+import styles from "./ProjectPage.module.css";
+import { ProjectProps, TabPanelProps } from "../../../interface";
+import Sidebar from "../../molecules/Sidebar/Sidebar";
+import Project from "../../molecules/Project/Project";
+import SearchBar from "../../atoms/SearchBar/SearchBar";
+import NewProject from "../../molecules/NewProject/NewProject";
 
 const mdTheme = createTheme();
 
@@ -35,7 +35,7 @@ function TabPanel(props: TabPanelProps) {
 function a11yProps(index: number) {
     return {
         id: `simple-tab-${index}`,
-        'aria-controls': `simple-tabpanel-${index}`,
+        "aria-controls": `simple-tabpanel-${index}`,
     };
 }
 
@@ -63,7 +63,7 @@ const ProjectPage = () => {
                     className={styles.mainContent}
                     sx={{
                         backgroundColor: (theme) =>
-                            theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
+                            theme.palette.mode === "light" ? theme.palette.grey[100] : theme.palette.grey[900],
                     }}
                 >
                     <Container maxWidth="lg" className={styles.mainContainer}>
@@ -73,8 +73,8 @@ const ProjectPage = () => {
                             </Typography>
                         ) : (
                             <Paper variant="outlined" className={styles.taskField}>
-                                <Box sx={{ width: '100%' }}>
-                                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                                <Box sx={{ width: "100%" }}>
+                                    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
                                         <Grid container>
                                             <Grid item xs={6} md={6} lg={6}>
                                                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -114,7 +114,7 @@ const ProjectPage = () => {
                                         <TabPanel value={value} index={1}>
                                             <Grid container spacing={3}>
                                                 {projects
-                                                    .filter((p) => p.status === 'Current')
+                                                    .filter((p) => p.status === "Current")
                                                     .map((p) => (
                                                         <Grid item xs={12} md={4} lg={4}>
                                                             <Project
@@ -134,7 +134,7 @@ const ProjectPage = () => {
                                         <TabPanel value={value} index={2}>
                                             <Grid container spacing={3}>
                                                 {projects
-                                                    .filter((p) => p.status === 'Completed')
+                                                    .filter((p) => p.status === "Completed")
                                                     .map((p) => (
                                                         <Grid item xs={12} md={4} lg={4}>
                                                             <Project
@@ -154,7 +154,7 @@ const ProjectPage = () => {
                                         <TabPanel value={value} index={3}>
                                             <Grid container spacing={3}>
                                                 {projects
-                                                    .filter((p) => p.status === 'Archived')
+                                                    .filter((p) => p.status === "Archived")
                                                     .map((p) => (
                                                         <Grid item xs={12} md={4} lg={4}>
                                                             <Project

@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const integrationSlice = createSlice({
-    name: 'integration',
+    name: "integration",
     initialState: { integrations: [], error: false },
     reducers: {
         replaceIntegrations(state, action) {

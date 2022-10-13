@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit/';
-import taskSlice from './task-slice';
-import projectSlice from './project-slice';
-import integrationSlice from './integration-slice';
-import gallerySlice from './gallery-slice';
+import { configureStore } from "@reduxjs/toolkit/";
+import taskSlice from "./task-slice";
+import projectSlice from "./project-slice";
+import integrationSlice from "./integration-slice";
+import gallerySlice from "./gallery-slice";
 
 const store = configureStore({
     reducer: {

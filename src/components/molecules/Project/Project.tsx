@@ -1,14 +1,14 @@
-import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
-import Chip from '@mui/material/Chip';
-import { ProjectProps } from '../../../interface';
-import styles from './Project.module.css';
-import ScheduleIcon from '@mui/icons-material/Schedule';
-import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
+import * as React from "react";
+import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardContent from "@mui/material/CardContent";
+import Avatar from "@mui/material/Avatar";
+import Chip from "@mui/material/Chip";
+import { ProjectProps } from "../../../interface";
+import styles from "./Project.module.css";
+import ScheduleIcon from "@mui/icons-material/Schedule";
+import ProgressBar from "../../atoms/ProgressBar/ProgressBar";
 
 const Project = ({ title, description, progress, dayLeft }: ProjectProps) => {
     return (
@@ -29,7 +29,7 @@ const Project = ({ title, description, progress, dayLeft }: ProjectProps) => {
                 </CardContent>
                 <CardHeader
                     className={styles.cardHeader}
-                    avatar={<Chip icon={<ScheduleIcon />} label={dayLeft + ' days left'} variant="outlined" />}
+                    avatar={<Chip icon={<ScheduleIcon />} label={dayLeft + " days left"} variant="outlined" />}
                     action={<Avatar sx={{ marginRight: 1, marginTop: 0.3 }} className={styles.avatar} />}
                 />
             </Card>

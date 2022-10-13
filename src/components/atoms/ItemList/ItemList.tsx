@@ -1,20 +1,20 @@
-import * as React from 'react';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import AssignmentIcon from '@mui/icons-material/Assignment';
-import WatchLaterIcon from '@mui/icons-material/WatchLater';
-import MessageIcon from '@mui/icons-material/Message';
-import GroupIcon from '@mui/icons-material/Group';
-import PublicIcon from '@mui/icons-material/Public';
-import WorkIcon from '@mui/icons-material/Work';
-import ImageIcon from '@mui/icons-material/Image';
-import SettingsIcon from '@mui/icons-material/Settings';
-import AddBoxIcon from '@mui/icons-material/AddBox';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import { NavLink } from 'react-router-dom';
+import * as React from "react";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import ListSubheader from "@mui/material/ListSubheader";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import AssignmentIcon from "@mui/icons-material/Assignment";
+import WatchLaterIcon from "@mui/icons-material/WatchLater";
+import MessageIcon from "@mui/icons-material/Message";
+import GroupIcon from "@mui/icons-material/Group";
+import PublicIcon from "@mui/icons-material/Public";
+import WorkIcon from "@mui/icons-material/Work";
+import ImageIcon from "@mui/icons-material/Image";
+import SettingsIcon from "@mui/icons-material/Settings";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import { NavLink } from "react-router-dom";
 
 export const mainListItems = (
     <React.Fragment>

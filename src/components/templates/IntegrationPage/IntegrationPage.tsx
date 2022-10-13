@@ -1,13 +1,13 @@
-import React from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { Grid, Paper, Typography, Container, Box } from '@mui/material';
-import { useAppSelector } from '../../../store/hooks';
-import styles from './IntegrationPage.module.css';
-import { IntegrationProps } from '../../../interface';
-import Sidebar from '../../molecules/Sidebar/Sidebar';
-import Integration from '../../molecules/Integration/Integration';
-import SearchBar from '../../atoms/SearchBar/SearchBar';
+import React from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { Grid, Paper, Typography, Container, Box } from "@mui/material";
+import { useAppSelector } from "../../../store/hooks";
+import styles from "./IntegrationPage.module.css";
+import { IntegrationProps } from "../../../interface";
+import Sidebar from "../../molecules/Sidebar/Sidebar";
+import Integration from "../../molecules/Integration/Integration";
+import SearchBar from "../../atoms/SearchBar/SearchBar";
 
 const mdTheme = createTheme();
 
@@ -35,7 +35,7 @@ const IntegrationPage = () => {
                     className={styles.mainContent}
                     sx={{
                         backgroundColor: (theme) =>
-                            theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
+                            theme.palette.mode === "light" ? theme.palette.grey[100] : theme.palette.grey[900],
                     }}
                 >
                     <Container maxWidth="lg" className={styles.mainContainer}>
@@ -45,8 +45,8 @@ const IntegrationPage = () => {
                             </Typography>
                         ) : (
                             <Paper variant="outlined" className={styles.taskField}>
-                                <Box sx={{ width: '100%' }}>
-                                    <Box sx={{ borderBottom: 1, borderColor: 'divider', paddingBottom: 2 }}>
+                                <Box sx={{ width: "100%" }}>
+                                    <Box sx={{ borderBottom: 1, borderColor: "divider", paddingBottom: 2 }}>
                                         <Grid container>
                                             <Grid item xs={6} md={6} lg={6}>
                                                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>

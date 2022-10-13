@@ -1,18 +1,18 @@
-import React from 'react';
-import { TaskProps } from '../../../interface';
-import { NavLink } from 'react-router-dom';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Task from '../../molecules/Task/Task';
-import Sidebar from '../../molecules/Sidebar/Sidebar';
-import styles from './TaskPage.module.css';
-import { useAppSelector } from '../../../store/hooks';
+import React from "react";
+import { TaskProps } from "../../../interface";
+import { NavLink } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Task from "../../molecules/Task/Task";
+import Sidebar from "../../molecules/Sidebar/Sidebar";
+import styles from "./TaskPage.module.css";
+import { useAppSelector } from "../../../store/hooks";
 
 const mdTheme = createTheme();
 
@@ -38,7 +38,7 @@ const TaskPage = () => {
                     className={styles.mainContent}
                     sx={{
                         backgroundColor: (theme) =>
-                            theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
+                            theme.palette.mode === "light" ? theme.palette.grey[100] : theme.palette.grey[900],
                     }}
                 >
                     <Container maxWidth="lg" className={styles.mainContainer}>

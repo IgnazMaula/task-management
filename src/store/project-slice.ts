@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const projectSlice = createSlice({
-    name: 'project',
+    name: "project",
     initialState: { projects: [], error: false },
     reducers: {
         replaceProjects(state, action) {

@@ -1,11 +1,11 @@
-import { taskAction } from '.';
-import axios from 'axios';
-import { Dispatch } from 'redux';
+import { taskAction } from ".";
+import axios from "axios";
+import { Dispatch } from "redux";
 
 export const fetchTaskData = () => {
     return async (dispatch: Dispatch) => {
         const fetchData = async () => {
-            const response = await axios('/api/tasks');
+            const response = await axios("/api/tasks");
             if (response.status !== 200) {
                 throw new Error(`This is an HTTP error: The status is ${response.status}`);
             }
