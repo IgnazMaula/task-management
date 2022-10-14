@@ -1,6 +1,8 @@
 import React from 'react';
+import { useState } from 'react';
 
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
@@ -8,18 +10,24 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { NavLink } from 'react-router-dom';
 
 import { TaskProps } from '../../../interface';
 import { useAppSelector } from '../../../store/hooks';
 import Sidebar from '../../molecules/Sidebar/Sidebar';
 import Task from '../../molecules/Task/Task';
+import NewTaskModal from '../../organisms/NewTaskModal/NewTaskModal';
 import styles from './TaskPage.module.css';
 
 const mdTheme = createTheme();
 
 const TaskPage = () => {
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = useState(true);
+    const [openModal, setOpenModal] = useState(false);
+    const [taskType, setTaskType] = useState('Tasks');
+    const [assignee, setAssignee] = useState('Lindsey Stroud');
+
+    const handleOpen = () => setOpenModal(true);
+    const handleClose = () => setOpenModal(false);
 
     const tasks: TaskProps[] = useAppSelector((state) => state.task.tasks);
     const completedTasks: TaskProps[] = useAppSelector((state) => state.task.completedTasks);
@@ -28,6 +36,13 @@ const TaskPage = () => {
 
     const toggleDrawer = () => {
         setOpen(!open);
+    };
+
+    const handleTaskType = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setTaskType(event.target.value);
+    };
+    const handleAssignee = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setAssignee(event.target.value);
     };
 
     return (
@@ -65,11 +80,14 @@ const TaskPage = () => {
                                                 status={t.status}
                                             />
                                         ))}
-                                        <NavLink to="/newtask">
-                                            <Typography align="center" className={styles.createNewText} color="#9E9E9E">
-                                                CREATE NEW
-                                            </Typography>
-                                        </NavLink>
+                                        <Button
+                                            variant="text"
+                                            size="large"
+                                            onClick={handleOpen}
+                                            className={styles.createNewText}
+                                        >
+                                            CREATE NEW
+                                        </Button>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={12} md={4} lg={4}>
@@ -87,11 +105,14 @@ const TaskPage = () => {
                                                 status={t.status}
                                             />
                                         ))}
-                                        <NavLink to="/newtask">
-                                            <Typography align="center" className={styles.createNewText} color="#9E9E9E">
-                                                CREATE NEW
-                                            </Typography>
-                                        </NavLink>
+                                        <Button
+                                            variant="text"
+                                            size="large"
+                                            onClick={handleOpen}
+                                            className={styles.createNewText}
+                                        >
+                                            CREATE NEW
+                                        </Button>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={12} md={4} lg={4}>
@@ -109,11 +130,14 @@ const TaskPage = () => {
                                                 status={t.status}
                                             />
                                         ))}
-                                        <NavLink to="/newtask">
-                                            <Typography align="center" className={styles.createNewText} color="#9E9E9E">
-                                                CREATE NEW
-                                            </Typography>
-                                        </NavLink>
+                                        <Button
+                                            variant="text"
+                                            size="large"
+                                            onClick={handleOpen}
+                                            className={styles.createNewText}
+                                        >
+                                            CREATE NEW
+                                        </Button>
                                     </Paper>
                                 </Grid>
                             </Grid>
@@ -121,6 +145,14 @@ const TaskPage = () => {
                     </Container>
                 </Box>
             </Box>
+            <NewTaskModal
+                open={openModal}
+                taskType={taskType}
+                assignee={assignee}
+                handleClose={handleClose}
+                handleTaskType={handleTaskType}
+                handleAssignee={handleAssignee}
+            />
         </ThemeProvider>
     );
 };

@@ -49,6 +49,7 @@ const ProjectPage = () => {
     const error = useAppSelector((state) => state.project.error);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+        event.preventDefault();
         setValue(newValue);
     };
     const toggleDrawer = () => {

@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 import { IntegrationProps } from '../../../interface';
 import styles from './Integration.module.css';
 
-const Integration = ({ title, description, imageUrl, isConnect }: IntegrationProps): React.ReactNode => {
+const Integration = ({ title, description, imageUrl, isConnect }: IntegrationProps) => {
     return (
         <React.Fragment>
             <Card variant="outlined" className={styles.card}>

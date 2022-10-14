@@ -105,3 +105,44 @@ export const GalleryData = {
         { title: 'Filmroll', author: 'Nikol Ricci', imageUrl: './images/6.jpg', date: 'June 7, 2019' },
     ],
 };
+
+// New Task Form
+
+export const taskTypes = [
+    {
+        value: 'Tasks',
+    },
+    {
+        value: 'Completed Tasks',
+    },
+    {
+        value: 'Canceled Task',
+    },
+];
+
+export const assignees = [
+    {
+        value: 'Lindsey Stroud',
+    },
+    {
+        value: 'George Fields',
+    },
+    {
+        value: 'Rebecca Moore',
+    },
+    {
+        value: 'Nicci Troiani',
+    },
+    {
+        value: 'Jones Dermot',
+    },
+    {
+        value: 'Jane Doe',
+    },
+    {
+        value: 'Franz Ferdinand',
+    },
+    {
+        value: 'Nikol Ricci',
+    },
+];

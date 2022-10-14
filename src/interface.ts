@@ -40,3 +40,12 @@ export interface ImageProps {
     imageUrl: string;
     date: string;
 }
+
+export interface NewTaskModelProps {
+    open: boolean;
+    taskType: string;
+    assignee: string;
+    handleClose: () => void;
+    handleTaskType: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleAssignee: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
