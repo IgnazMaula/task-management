@@ -17,6 +17,7 @@ export interface TaskProps {
     closeDate: string;
     name: string;
     status: 'Default' | 'Urgent' | 'Canceled' | 'Completed' | 'Paid';
+    taskType?: string;
 }
 
 export interface ProjectProps {

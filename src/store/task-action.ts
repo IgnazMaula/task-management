@@ -21,8 +21,6 @@ export const fetchTaskData = () => {
             dispatch(
                 taskAction.replaceTasks({
                     tasks: taskData.TaskData.Tasks,
-                    completedTasks: taskData.TaskData.CompletedTasks,
-                    canceledTasks: taskData.TaskData.CanceledTasks,
                 })
             );
         } catch (error) {

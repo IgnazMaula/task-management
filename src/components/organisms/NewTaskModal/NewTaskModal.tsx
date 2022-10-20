@@ -15,7 +15,7 @@ import styles from './NewTaskModal.module.css';
 const NewTaskModal = ({ open, handleClose, handleSubmit }: NewTaskModelProps) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [taskType, setTaskType] = useState('Tasks');
+    const [taskType, setTaskType] = useState('Task');
     const [assignee, setAssignee] = useState('Lindsey Stroud');
 
     const handleTaskType = (event: ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +39,7 @@ const NewTaskModal = ({ open, handleClose, handleSubmit }: NewTaskModelProps) =>
                         closeDate: 'May 22, 2022',
                         name: assignee,
                         status: 'Urgent',
+                        taskType: taskType,
                     })
                 }
             >
@@ -57,7 +58,7 @@ const NewTaskModal = ({ open, handleClose, handleSubmit }: NewTaskModelProps) =>
                     >
                         {taskTypes.map((option) => (
                             <MenuItem key={option.value} value={option.value}>
-                                {option.value}
+                                {option.name}
                             </MenuItem>
                         ))}
                     </TextField>

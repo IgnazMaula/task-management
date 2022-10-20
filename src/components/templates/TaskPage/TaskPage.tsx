@@ -36,8 +36,6 @@ const TaskPage = () => {
     };
 
     const tasks: TaskProps[] = useAppSelector((state) => state.task.tasks);
-    const completedTasks: TaskProps[] = useAppSelector((state) => state.task.completedTasks);
-    const canceledTasks: TaskProps[] = useAppSelector((state) => state.task.canceledTasks);
     const error = useAppSelector((state) => state.task.error);
 
     const toggleDrawer = () => {
@@ -70,15 +68,17 @@ const TaskPage = () => {
                                             Tasks
                                         </Typography>
                                         <Divider className={styles.divider} />
-                                        {tasks.map((t) => (
-                                            <Task
-                                                key={t.title}
-                                                title={t.title}
-                                                closeDate={t.closeDate}
-                                                name={t.name}
-                                                status={t.status}
-                                            />
-                                        ))}
+                                        {tasks
+                                            .filter((t) => t.taskType === 'Task')
+                                            .map((t) => (
+                                                <Task
+                                                    key={t.title}
+                                                    title={t.title}
+                                                    closeDate={t.closeDate}
+                                                    name={t.name}
+                                                    status={t.status}
+                                                />
+                                            ))}
                                         <Button
                                             variant="text"
                                             size="large"
@@ -95,15 +95,17 @@ const TaskPage = () => {
                                             Completed Tasks
                                         </Typography>
                                         <Divider className={styles.divider} />
-                                        {completedTasks.map((t) => (
-                                            <Task
-                                                key={t.title}
-                                                title={t.title}
-                                                closeDate={t.closeDate}
-                                                name={t.name}
-                                                status={t.status}
-                                            />
-                                        ))}
+                                        {tasks
+                                            .filter((t) => t.taskType === 'CompletedTask')
+                                            .map((t) => (
+                                                <Task
+                                                    key={t.title}
+                                                    title={t.title}
+                                                    closeDate={t.closeDate}
+                                                    name={t.name}
+                                                    status={t.status}
+                                                />
+                                            ))}
                                         <Button
                                             variant="text"
                                             size="large"
@@ -120,15 +122,17 @@ const TaskPage = () => {
                                             Canceled Tasks
                                         </Typography>
                                         <Divider className={styles.divider} />
-                                        {canceledTasks.map((t) => (
-                                            <Task
-                                                key={t.title}
-                                                title={t.title}
-                                                closeDate={t.closeDate}
-                                                name={t.name}
-                                                status={t.status}
-                                            />
-                                        ))}
+                                        {tasks
+                                            .filter((t) => t.taskType === 'CanceledTask')
+                                            .map((t) => (
+                                                <Task
+                                                    key={t.title}
+                                                    title={t.title}
+                                                    closeDate={t.closeDate}
+                                                    name={t.name}
+                                                    status={t.status}
+                                                />
+                                            ))}
                                         <Button
                                             variant="text"
                                             size="large"
