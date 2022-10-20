@@ -43,9 +43,6 @@ export interface ImageProps {
 
 export interface NewTaskModelProps {
     open: boolean;
-    taskType: string;
-    assignee: string;
     handleClose: () => void;
-    handleTaskType: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    handleAssignee: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleSubmit: (event: React.FormEvent<HTMLFormElement>, newTask: TaskProps) => void;
 }

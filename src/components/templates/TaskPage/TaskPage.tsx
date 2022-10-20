@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -10,9 +10,10 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import { postTaskData } from 'store/task-action';
 
 import { TaskProps } from '../../../interface';
-import { useAppSelector } from '../../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import Sidebar from '../../molecules/Sidebar/Sidebar';
 import Task from '../../molecules/Task/Task';
 import NewTaskModal from '../../organisms/NewTaskModal/NewTaskModal';
@@ -23,11 +24,16 @@ const mdTheme = createTheme();
 const TaskPage = () => {
     const [open, setOpen] = useState(true);
     const [openModal, setOpenModal] = useState(false);
-    const [taskType, setTaskType] = useState('Tasks');
-    const [assignee, setAssignee] = useState('Lindsey Stroud');
+
+    const dispatch = useAppDispatch();
 
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
+    const handleSubmit = (event: FormEvent<HTMLFormElement>, newTask: TaskProps) => {
+        event.preventDefault();
+        dispatch(postTaskData(newTask));
+        handleClose();
+    };
 
     const tasks: TaskProps[] = useAppSelector((state) => state.task.tasks);
     const completedTasks: TaskProps[] = useAppSelector((state) => state.task.completedTasks);
@@ -36,13 +42,6 @@ const TaskPage = () => {
 
     const toggleDrawer = () => {
         setOpen(!open);
-    };
-
-    const handleTaskType = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setTaskType(event.target.value);
-    };
-    const handleAssignee = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setAssignee(event.target.value);
     };
 
     return (
@@ -145,14 +144,7 @@ const TaskPage = () => {
                     </Container>
                 </Box>
             </Box>
-            <NewTaskModal
-                open={openModal}
-                taskType={taskType}
-                assignee={assignee}
-                handleClose={handleClose}
-                handleTaskType={handleTaskType}
-                handleAssignee={handleAssignee}
-            />
+            <NewTaskModal open={openModal} handleClose={handleClose} handleSubmit={handleSubmit} />
         </ThemeProvider>
     );
 };

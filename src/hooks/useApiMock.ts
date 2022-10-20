@@ -5,6 +5,7 @@ import { GalleryData, IntegrationData, ProjectData, TaskData } from '../data';
 
 const useApiMock = () => {
     var mock = new MockAdapter(axios);
+
     mock.onGet('/api/tasks').reply(200, {
         TaskData,
     });
@@ -16,6 +17,9 @@ const useApiMock = () => {
     });
     mock.onGet('/api/gallery').reply(200, {
         GalleryData,
+    });
+    mock.onPost('/api/tasks/post').reply(200, {
+        message: 'Success',
     });
 };
 

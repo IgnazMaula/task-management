@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Dispatch } from 'redux';
 
 import { taskAction } from '.';
+import { TaskProps } from './../interface';
 
 export const fetchTaskData = () => {
     return async (dispatch: Dispatch) => {
@@ -26,6 +27,34 @@ export const fetchTaskData = () => {
             );
         } catch (error) {
             dispatch(taskAction.isError({ error: true }));
+        }
+    };
+};
+
+export const postTaskData = (newTask: TaskProps) => {
+    return async (dispatch: Dispatch) => {
+        const postData = async () => {
+            const response = await axios.post('/api/tasks/post', newTask);
+            if (response.status !== 200) {
+                throw new Error(`This is an HTTP error: The status is ${response.status}`);
+            }
+            const data = await response.data;
+            console.log(data);
+
+            return data;
+        };
+
+        try {
+            const taskData = await postData();
+            console.log(taskData);
+            console.log(taskAction);
+            dispatch(
+                taskAction.addNewTask({
+                    newTask: newTask,
+                })
+            );
+        } catch (error) {
+            dispatch(taskAction.isError({ error: false }));
         }
     };
 };
