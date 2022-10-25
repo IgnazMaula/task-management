@@ -13,15 +13,15 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import dayjs, { Dayjs } from 'dayjs';
 
 import { assignees, taskTypes } from '../../../data';
-import { NewTaskModelProps } from '../../../interface';
-import styles from './NewTaskModal.module.css';
+import { EditTaskModelProps } from '../../../interface';
+import styles from './EditTaskModal.module.css';
 
-const NewTaskModal = ({ open, handleClose, handleSubmit }: NewTaskModelProps) => {
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [taskType, setTaskType] = useState('Task');
-    const [assignee, setAssignee] = useState('Lindsey Stroud');
-    const [date, setDate] = React.useState<Dayjs | null>(dayjs(Date.now()));
+const EditTaskModal = ({ open, handleClose, handleEdit, currentTask }: EditTaskModelProps) => {
+    const [title, setTitle] = useState(currentTask.title);
+    const [description, setDescription] = useState(currentTask.description);
+    const [taskType, setTaskType] = useState(currentTask.taskType);
+    const [assignee, setAssignee] = useState(currentTask.name);
+    const [date, setDate] = React.useState<Dayjs | null>(dayjs(currentTask.closeDate, 'MMMM D, YYYY'));
 
     const handleTaskType = (event: ChangeEvent<HTMLInputElement>) => {
         setTaskType(event.target.value);
@@ -44,10 +44,12 @@ const NewTaskModal = ({ open, handleClose, handleSubmit }: NewTaskModelProps) =>
             >
                 <form
                     onSubmit={(e) =>
-                        handleSubmit(e, {
-                            title: title,
+                        handleEdit(e, {
+                            id: currentTask.id,
+                            title: title || '',
                             closeDate: date?.format('LL').toString() || Date.now().toString(),
-                            name: assignee,
+                            name: assignee || '',
+                            description: description,
                             status: 'Urgent',
                             taskType: taskType,
                         })
@@ -55,7 +57,7 @@ const NewTaskModal = ({ open, handleClose, handleSubmit }: NewTaskModelProps) =>
                 >
                     <Box className={styles.container}>
                         <Typography id="modal-modal-title" variant="h6" component="h2">
-                            Create New Task
+                            Edit Task
                         </Typography>
                         <TextField
                             className={styles.textField}
@@ -124,4 +126,4 @@ const NewTaskModal = ({ open, handleClose, handleSubmit }: NewTaskModelProps) =>
     );
 };
 
-export default NewTaskModal;
+export default EditTaskModal;

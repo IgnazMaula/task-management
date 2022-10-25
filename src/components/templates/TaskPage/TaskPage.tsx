@@ -10,29 +10,51 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { postTaskData } from 'store/task-action';
+import EditTaskModal from 'components/organisms/EditTaskModal/EditTaskModal';
+import NewTaskModal from 'components/organisms/NewTaskModal/NewTaskModal';
+import { postTaskData, EditTaskData } from 'store/task-action';
 
 import { TaskProps } from '../../../interface';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import Sidebar from '../../molecules/Sidebar/Sidebar';
 import Task from '../../molecules/Task/Task';
-import NewTaskModal from '../../organisms/NewTaskModal/NewTaskModal';
 import styles from './TaskPage.module.css';
 
 const mdTheme = createTheme();
 
+const initialTask: TaskProps = {
+    title: '',
+    closeDate: '',
+    name: '',
+    status: 'Default',
+    taskType: 'Tasks',
+    description: '',
+};
+
 const TaskPage = () => {
     const [open, setOpen] = useState(true);
     const [openModal, setOpenModal] = useState(false);
+    const [openEditModal, setOpenEditModal] = useState(false);
+    const [currentTask, setCurrentTask] = useState<TaskProps>(initialTask);
 
     const dispatch = useAppDispatch();
 
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
+    const handleEditOpen = (task: TaskProps) => {
+        setCurrentTask(task);
+        setOpenEditModal(true);
+    };
+    const handleEditClose = () => setOpenEditModal(false);
     const handleSubmit = (event: FormEvent<HTMLFormElement>, newTask: TaskProps) => {
         event.preventDefault();
         dispatch(postTaskData(newTask));
         handleClose();
+    };
+    const handleEdit = (event: FormEvent<HTMLFormElement>, selectedTask: TaskProps) => {
+        event.preventDefault();
+        dispatch(EditTaskData(selectedTask));
+        handleEditClose();
     };
 
     const tasks: TaskProps[] = useAppSelector((state) => state.task.tasks);
@@ -71,13 +93,15 @@ const TaskPage = () => {
                                         {tasks
                                             .filter((t) => t.taskType === 'Task')
                                             .map((t) => (
-                                                <Task
-                                                    key={t.title}
-                                                    title={t.title}
-                                                    closeDate={t.closeDate}
-                                                    name={t.name}
-                                                    status={t.status}
-                                                />
+                                                <button onClick={() => handleEditOpen(t)} className={styles.editClick}>
+                                                    <Task
+                                                        key={t.id}
+                                                        title={t.title}
+                                                        closeDate={t.closeDate}
+                                                        name={t.name}
+                                                        status={t.status}
+                                                    />
+                                                </button>
                                             ))}
                                         <Button
                                             variant="text"
@@ -98,13 +122,15 @@ const TaskPage = () => {
                                         {tasks
                                             .filter((t) => t.taskType === 'CompletedTask')
                                             .map((t) => (
-                                                <Task
-                                                    key={t.title}
-                                                    title={t.title}
-                                                    closeDate={t.closeDate}
-                                                    name={t.name}
-                                                    status={t.status}
-                                                />
+                                                <button onClick={() => handleEditOpen(t)} className={styles.editClick}>
+                                                    <Task
+                                                        key={t.id}
+                                                        title={t.title}
+                                                        closeDate={t.closeDate}
+                                                        name={t.name}
+                                                        status={t.status}
+                                                    />
+                                                </button>
                                             ))}
                                         <Button
                                             variant="text"
@@ -125,13 +151,15 @@ const TaskPage = () => {
                                         {tasks
                                             .filter((t) => t.taskType === 'CanceledTask')
                                             .map((t) => (
-                                                <Task
-                                                    key={t.title}
-                                                    title={t.title}
-                                                    closeDate={t.closeDate}
-                                                    name={t.name}
-                                                    status={t.status}
-                                                />
+                                                <button onClick={() => handleEditOpen(t)} className={styles.editClick}>
+                                                    <Task
+                                                        key={t.id}
+                                                        title={t.title}
+                                                        closeDate={t.closeDate}
+                                                        name={t.name}
+                                                        status={t.status}
+                                                    />
+                                                </button>
                                             ))}
                                         <Button
                                             variant="text"
@@ -149,6 +177,14 @@ const TaskPage = () => {
                 </Box>
             </Box>
             <NewTaskModal open={openModal} handleClose={handleClose} handleSubmit={handleSubmit} />
+            {openEditModal && (
+                <EditTaskModal
+                    open={openEditModal}
+                    handleClose={handleEditClose}
+                    handleEdit={handleEdit}
+                    currentTask={currentTask}
+                />
+            )}
         </ThemeProvider>
     );
 };

@@ -13,11 +13,13 @@ export interface TabPanelProps {
 }
 
 export interface TaskProps {
+    id?: number;
     title: string;
     closeDate: string;
     name: string;
     status: 'Default' | 'Urgent' | 'Canceled' | 'Completed' | 'Paid';
     taskType?: string;
+    description?: string;
 }
 
 export interface ProjectProps {
@@ -46,4 +48,11 @@ export interface NewTaskModelProps {
     open: boolean;
     handleClose: () => void;
     handleSubmit: (event: React.FormEvent<HTMLFormElement>, newTask: TaskProps) => void;
+}
+
+export interface EditTaskModelProps {
+    open: boolean;
+    handleClose: () => void;
+    handleEdit: (event: React.FormEvent<HTMLFormElement>, taskIndex: TaskProps) => void;
+    currentTask: TaskProps;
 }

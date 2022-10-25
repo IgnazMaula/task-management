@@ -21,6 +21,9 @@ const useApiMock = () => {
     mock.onPost('/api/tasks/post').reply(200, {
         message: 'Success',
     });
+    mock.onPut('/api/tasks/put').reply(200, {
+        message: 'Success',
+    });
 };
 
 export default useApiMock;
