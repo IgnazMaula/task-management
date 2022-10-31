@@ -67,3 +67,11 @@ export interface EditTaskModelProps {
     handleEdit: (event: React.FormEvent<HTMLFormElement>, taskIndex: TaskProps) => void;
     currentTask: TaskProps;
 }
+
+export interface TaskModalProps {
+    open: boolean;
+    handleClose: () => void;
+    handleCreate: (event: React.FormEvent<HTMLFormElement>, newTask: TaskProps) => void;
+    handleEdit: (event: React.FormEvent<HTMLFormElement>, taskIndex: TaskProps) => void;
+    currentTask: TaskProps;
+}

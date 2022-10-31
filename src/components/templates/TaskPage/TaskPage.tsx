@@ -10,8 +10,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import EditTaskModal from 'components/organisms/EditTaskModal/EditTaskModal';
-import NewTaskModal from 'components/organisms/NewTaskModal/NewTaskModal';
+import TaskModal from 'components/organisms/TaskModal/TaskModal';
 import { postTaskData, EditTaskData } from 'store/task-action';
 
 import { TaskProps } from '../../../interface';
@@ -24,37 +23,35 @@ const mdTheme = createTheme();
 
 const initialTask: TaskProps = {
     title: '',
-    closeDate: '',
-    name: '',
+    closeDate: 'January 1, 2022',
+    name: 'Lindsey Stroud',
     status: 'Default',
-    taskType: 'Tasks',
+    taskType: 'Task',
     description: '',
 };
 
 const TaskPage = () => {
     const [open, setOpen] = useState(true);
-    const [openModal, setOpenModal] = useState(false);
     const [openEditModal, setOpenEditModal] = useState(false);
     const [currentTask, setCurrentTask] = useState<TaskProps>(initialTask);
 
     const dispatch = useAppDispatch();
 
-    const handleOpen = () => setOpenModal(true);
-    const handleClose = () => setOpenModal(false);
-    const handleEditOpen = (task: TaskProps) => {
+    const handleOpenModal = (task: TaskProps) => {
         setCurrentTask(task);
         setOpenEditModal(true);
     };
-    const handleEditClose = () => setOpenEditModal(false);
-    const handleSubmit = (event: FormEvent<HTMLFormElement>, newTask: TaskProps) => {
+    const handleCloseModal = () => setOpenEditModal(false);
+
+    const handleCreate = (event: FormEvent<HTMLFormElement>, newTask: TaskProps) => {
         event.preventDefault();
         dispatch(postTaskData(newTask));
-        handleClose();
+        handleCloseModal();
     };
     const handleEdit = (event: FormEvent<HTMLFormElement>, selectedTask: TaskProps) => {
         event.preventDefault();
         dispatch(EditTaskData(selectedTask));
-        handleEditClose();
+        handleCloseModal();
     };
 
     const tasks: TaskProps[] = useAppSelector((state) => state.task.tasks);
@@ -93,7 +90,7 @@ const TaskPage = () => {
                                         {tasks
                                             .filter((t) => t.taskType === 'Task')
                                             .map((t) => (
-                                                <button onClick={() => handleEditOpen(t)} className={styles.editClick}>
+                                                <button onClick={() => handleOpenModal(t)} className={styles.editClick}>
                                                     <Task
                                                         key={t.id}
                                                         title={t.title}
@@ -106,7 +103,7 @@ const TaskPage = () => {
                                         <Button
                                             variant="text"
                                             size="large"
-                                            onClick={handleOpen}
+                                            onClick={() => handleOpenModal(initialTask)}
                                             className={styles.createNewText}
                                         >
                                             CREATE NEW
@@ -122,7 +119,7 @@ const TaskPage = () => {
                                         {tasks
                                             .filter((t) => t.taskType === 'CompletedTask')
                                             .map((t) => (
-                                                <button onClick={() => handleEditOpen(t)} className={styles.editClick}>
+                                                <button onClick={() => handleOpenModal(t)} className={styles.editClick}>
                                                     <Task
                                                         key={t.id}
                                                         title={t.title}
@@ -135,7 +132,7 @@ const TaskPage = () => {
                                         <Button
                                             variant="text"
                                             size="large"
-                                            onClick={handleOpen}
+                                            onClick={() => handleOpenModal(initialTask)}
                                             className={styles.createNewText}
                                         >
                                             CREATE NEW
@@ -151,7 +148,7 @@ const TaskPage = () => {
                                         {tasks
                                             .filter((t) => t.taskType === 'CanceledTask')
                                             .map((t) => (
-                                                <button onClick={() => handleEditOpen(t)} className={styles.editClick}>
+                                                <button onClick={() => handleOpenModal(t)} className={styles.editClick}>
                                                     <Task
                                                         key={t.id}
                                                         title={t.title}
@@ -164,7 +161,7 @@ const TaskPage = () => {
                                         <Button
                                             variant="text"
                                             size="large"
-                                            onClick={handleOpen}
+                                            onClick={() => handleOpenModal(initialTask)}
                                             className={styles.createNewText}
                                         >
                                             CREATE NEW
@@ -176,11 +173,11 @@ const TaskPage = () => {
                     </Container>
                 </Box>
             </Box>
-            <NewTaskModal open={openModal} handleClose={handleClose} handleSubmit={handleSubmit} />
             {openEditModal && (
-                <EditTaskModal
+                <TaskModal
                     open={openEditModal}
-                    handleClose={handleEditClose}
+                    handleClose={handleCloseModal}
+                    handleCreate={handleCreate}
                     handleEdit={handleEdit}
                     currentTask={currentTask}
                 />
