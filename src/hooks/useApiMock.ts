@@ -1,11 +1,17 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
-import { GalleryData, IntegrationData, ProjectData, TaskData } from '../data';
+import { GalleryData, IntegrationData, ProjectData, TaskData, ProfileData } from '../data';
 
 const useApiMock = () => {
     var mock = new MockAdapter(axios);
 
+    mock.onGet('/api/profile').reply(200, {
+        ProfileData,
+    });
+    mock.onPut('/api/profile/put').reply(200, {
+        message: 'Success',
+    });
     mock.onGet('/api/tasks').reply(200, {
         TaskData,
     });

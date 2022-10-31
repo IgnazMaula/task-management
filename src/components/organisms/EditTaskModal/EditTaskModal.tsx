@@ -116,7 +116,7 @@ const EditTaskModal = ({ open, handleClose, handleEdit, currentTask }: EditTaskM
                                 Cancel
                             </Button>
                             <Button variant="contained" type="submit">
-                                Create
+                                Edit
                             </Button>
                         </div>
                     </Box>

@@ -12,6 +12,17 @@ export interface TabPanelProps {
     value: number;
 }
 
+export interface ProfileProps {
+    firstName?: string;
+    lastName?: string;
+    phoneNumber?: string;
+    email?: string;
+    city?: string;
+    state?: string;
+    country?: string;
+    postcode?: string;
+}
+
 export interface TaskProps {
     id?: number;
     title: string;

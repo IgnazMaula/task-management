@@ -1,14 +1,19 @@
 import React from 'react';
 
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import MuiDrawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { NavLink } from 'react-router-dom';
+import { useAppSelector } from 'store/hooks';
 
-import { SideBarProps } from '../../../interface';
+import { ProfileProps, SideBarProps } from '../../../interface';
 import { mainListItems, secondaryListItems } from '../../atoms/ItemList/ItemList';
 import styles from './Sidebar.module.css';
 
@@ -38,8 +43,18 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 }));
 
 const Sidebar = ({ open, toggleDrawer }: SideBarProps) => {
+    const profile: ProfileProps = useAppSelector((state) => state.profile.profile);
+
     return (
         <Drawer variant="permanent" open={open}>
+            <NavLink to="/profile">
+                <Box className={styles.profileBox}>
+                    <Avatar className={styles.avatar} alt={`${profile.firstName} ${profile.lastName}`} src="name" />
+                    <Typography>
+                        {profile.firstName} {profile.lastName}
+                    </Typography>
+                </Box>
+            </NavLink>
             <Toolbar className={styles.toolbar}>
                 <IconButton onClick={toggleDrawer}>
                     <ChevronLeftIcon />

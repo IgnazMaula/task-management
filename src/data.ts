@@ -1,3 +1,14 @@
+export const ProfileData = {
+    firstName: 'Ignaz',
+    lastName: 'Maula',
+    phoneNumber: '000-000-000',
+    email: 'ignaz@email.com',
+    city: 'Bali',
+    state: 'Indonesia',
+    country: 'Indonesia',
+    postcode: '80361',
+};
+
 export const TaskData = {
     Tasks: [
         {
@@ -167,8 +178,6 @@ export const GalleryData = {
         { title: 'Filmroll', author: 'Nikol Ricci', imageUrl: './images/6.jpg', date: 'June 7, 2019' },
     ],
 };
-
-// New Task Form
 
 export const taskTypes = [
     {

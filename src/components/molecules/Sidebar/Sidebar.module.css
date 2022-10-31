@@ -6,6 +6,22 @@
     padding-right: 0.5rem;
 }
 
+.profileBox {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.profileBox p {
+    font-weight: bold;
+}
+
+.avatar {
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    width: 50px !important;
+    height: 50px !important;
+}
+
 .divider {
     margin-top: 1rem !important;
     margin-bottom: 1rem !important;

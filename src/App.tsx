@@ -7,12 +7,14 @@ import './App.css';
 import BlankPage from './components/templates/BlankPage/BlankPage';
 import GalleryPage from './components/templates/GalleryPage/GalleryPage';
 import IntegrationPage from './components/templates/IntegrationPage/IntegrationPage';
+import ProfilePage from './components/templates/ProfilePage/ProfilePage';
 import ProjectPage from './components/templates/ProjectPage/ProjectPage';
 import TaskPage from './components/templates/TaskPage/TaskPage';
 import useApiMock from './hooks/useApiMock';
 import { fetchGalleryData } from './store/gallery-action';
 import { useAppDispatch } from './store/hooks';
 import { fetchIntegrationData } from './store/integration-action';
+import { fetchProfileData } from './store/profile-action';
 import { fetchProjectData } from './store/project-action';
 import { fetchTaskData } from './store/task-action';
 
@@ -23,6 +25,7 @@ function App() {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
+        dispatch(fetchProfileData());
         dispatch(fetchTaskData());
         dispatch(fetchProjectData());
         dispatch(fetchIntegrationData());
@@ -36,6 +39,7 @@ function App() {
                 <Route path="/projects" element={<ProjectPage />}></Route>
                 <Route path="/integrations" element={<IntegrationPage />}></Route>
                 <Route path="/imagegallery" element={<GalleryPage />}></Route>
+                <Route path="/profile" element={<ProfilePage />}></Route>
                 <Route path="*" element={<BlankPage />}></Route>
             </Routes>
         </Router>
