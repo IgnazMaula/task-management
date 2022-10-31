@@ -16,7 +16,7 @@ import { TabPanelProps, ProfileProps } from '../../../interface';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { EditProfileData } from '../../../store/profile-action';
 import Sidebar from '../../molecules/Sidebar/Sidebar';
-import styles from './ProfilePage.module.css';
+import styles from './ProfilePage.module.scss';
 
 const mdTheme = createTheme();
 

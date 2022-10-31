@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import { statuses } from '../../../const';
 import { TaskProps } from '../../../interface';
-import styles from './Task.module.css';
+import styles from './Task.module.scss';
 
 const Task = ({ title, closeDate, name, status }: TaskProps) => {
     return (

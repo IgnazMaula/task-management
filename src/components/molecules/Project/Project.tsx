@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 import { ProjectProps } from '../../../interface';
 import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
-import styles from './Project.module.css';
+import styles from './Project.module.scss';
 
 const Project = ({ title, description, progress, dayLeft }: ProjectProps) => {
     return (

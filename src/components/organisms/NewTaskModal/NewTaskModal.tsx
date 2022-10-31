@@ -14,7 +14,7 @@ import dayjs, { Dayjs } from 'dayjs';
 
 import { assignees, taskTypes } from '../../../data';
 import { NewTaskModelProps } from '../../../interface';
-import styles from './NewTaskModal.module.css';
+import styles from './NewTaskModal.module.scss';
 
 const NewTaskModal = ({ open, handleClose, handleSubmit }: NewTaskModelProps) => {
     const [title, setTitle] = useState('');

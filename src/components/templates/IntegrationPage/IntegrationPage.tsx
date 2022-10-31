@@ -9,7 +9,7 @@ import { useAppSelector } from '../../../store/hooks';
 import SearchBar from '../../atoms/SearchBar/SearchBar';
 import Integration from '../../molecules/Integration/Integration';
 import Sidebar from '../../molecules/Sidebar/Sidebar';
-import styles from './IntegrationPage.module.css';
+import styles from './IntegrationPage.module.scss';
 
 const mdTheme = createTheme();
 

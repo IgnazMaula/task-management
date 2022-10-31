@@ -1,0 +1,23 @@
+.card {
+    padding-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 3px 3px 2px #ebebeb;
+
+    .cardContent {
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    .cardTitle {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .cardHeader {
+        padding: 1rem;
+    }
+
+    .avatar {
+        background-color: #2196f3;
+    }
+}

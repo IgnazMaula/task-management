@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
 
 import { IntegrationProps } from '../../../interface';
-import styles from './Integration.module.css';
+import styles from './Integration.module.scss';
 
 const Integration = ({ title, description, imageUrl, isConnect }: IntegrationProps) => {
     return (

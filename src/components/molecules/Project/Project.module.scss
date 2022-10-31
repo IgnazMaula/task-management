@@ -1,0 +1,35 @@
+.card {
+    padding-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 3px 3px 2px #ebebeb;
+
+    .cardContent {
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    .cardTitle {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .progress {
+        text-align: right;
+        color: #9e9e9e;
+    }
+
+    .cardHeader {
+        padding: 1rem;
+    }
+
+    .projectAvatar {
+        width: 45px;
+        height: 45px;
+        background-color: #fc6b03;
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+        background-color: #2196f3;
+    }
+}

@@ -10,7 +10,7 @@ import { useAppSelector } from '../../../store/hooks';
 import GallerySearchBar from '../../atoms/GallerySearchBar/GallerySearchbar';
 import ImageCard from '../../molecules/ImageCard/ImageCard';
 import Sidebar from '../../molecules/Sidebar/Sidebar';
-import styles from './GalleryPage.module.css';
+import styles from './GalleryPage.module.scss';
 
 const mdTheme = createTheme();
 

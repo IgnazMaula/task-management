@@ -5,12 +5,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.cardContent {
-    text-align: center;
-}
+    .cardContent {
+        text-align: center;
+    }
 
-.createNewText {
-    font-weight: bold !important;
+    .createNewText {
+        font-weight: bold;
+    }
 }

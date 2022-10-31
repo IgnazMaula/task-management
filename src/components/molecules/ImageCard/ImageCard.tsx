@@ -7,7 +7,7 @@ import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
 
 import { ImageProps } from '../../../interface';
-import styles from './ImageCard.module.css';
+import styles from './ImageCard.module.scss';
 
 const ImageCard = ({ title, author, imageUrl, date }: ImageProps) => {
     return (

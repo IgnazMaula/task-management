@@ -18,7 +18,7 @@ import { TaskProps } from '../../../interface';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import Sidebar from '../../molecules/Sidebar/Sidebar';
 import Task from '../../molecules/Task/Task';
-import styles from './TaskPage.module.css';
+import styles from './TaskPage.module.scss';
 
 const mdTheme = createTheme();
 

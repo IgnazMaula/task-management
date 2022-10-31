@@ -14,7 +14,7 @@ import dayjs, { Dayjs } from 'dayjs';
 
 import { assignees, taskTypes } from '../../../data';
 import { EditTaskModelProps } from '../../../interface';
-import styles from './EditTaskModal.module.css';
+import styles from './EditTaskModal.module.scss';
 
 const EditTaskModal = ({ open, handleClose, handleEdit, currentTask }: EditTaskModelProps) => {
     const [title, setTitle] = useState(currentTask.title);

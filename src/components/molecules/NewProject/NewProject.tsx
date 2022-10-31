@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
 
-import styles from './NewProject.module.css';
+import styles from './NewProject.module.scss';
 
 const NewProject = () => {
     return (

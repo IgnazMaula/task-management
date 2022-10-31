@@ -10,7 +10,7 @@ import SearchBar from '../../atoms/SearchBar/SearchBar';
 import NewProject from '../../molecules/NewProject/NewProject';
 import Project from '../../molecules/Project/Project';
 import Sidebar from '../../molecules/Sidebar/Sidebar';
-import styles from './ProjectPage.module.css';
+import styles from './ProjectPage.module.scss';
 
 const mdTheme = createTheme();
 

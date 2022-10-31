@@ -1,0 +1,15 @@
+.box {
+    display: flex;
+
+    .mainContent {
+        display: flex;
+        flex-grow: 1;
+        height: 100vh;
+        overflow: auto;
+    }
+
+    .mainContainer {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}

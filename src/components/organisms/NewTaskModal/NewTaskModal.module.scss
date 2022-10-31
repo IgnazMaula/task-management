@@ -1,0 +1,23 @@
+.container {
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    border-radius: 2px;
+    padding: 2rem;
+
+    .textField {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .buttonGroup {
+        text-align: right;
+    }
+
+    .buttonGroup button {
+        margin: 0.4rem;
+    }
+}

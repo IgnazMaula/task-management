@@ -8,7 +8,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
 import Sidebar from '../../molecules/Sidebar/Sidebar';
-import styles from './BlankPage.module.css';
+import styles from './BlankPage.module.scss';
 
 const mdTheme = createTheme();
 

@@ -15,7 +15,7 @@ import { useAppSelector } from 'store/hooks';
 
 import { ProfileProps, SideBarProps } from '../../../interface';
 import { mainListItems, secondaryListItems } from '../../atoms/ItemList/ItemList';
-import styles from './Sidebar.module.css';
+import styles from './Sidebar.module.scss';
 
 const drawerWidth: number = 240;
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
